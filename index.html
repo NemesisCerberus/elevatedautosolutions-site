@@ -42,7 +42,7 @@
     header{position:sticky; top:0; z-index:20; backdrop-filter: blur(8px); background:linear-gradient(180deg, rgba(11,18,32,.75), rgba(11,18,32,.35)); border-bottom:1px solid rgba(255,255,255,.06)}
     .nav{display:flex; align-items:center; justify-content:space-between; padding:14px 0}
     .brand{display:flex; align-items:center; gap:14px}
-    .brand-logo{height:36px; width:auto; display:block}
+    /* removed earlier tiny logo rule; single canonical rule lives below */
     .menu{display:flex; gap:20px}
     .menu a{opacity:.9}
     .menu a:hover{opacity:1}
@@ -77,14 +77,19 @@
       .features{grid-template-columns: 1fr}
     }
 
-    .brand-logo {
-  height: 60px;           /* increase size */
-  width: auto;
-  background-color: #0f172a; /* solid dark backdrop for transparent logo */
-  border-radius: 8px;
-  padding: 4px 6px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
-}
+    /* Canonical, larger logo rule + mobile fallback */
+    header .brand-logo{
+      height:90px;           /* desktop size */
+      width:auto;
+      background-color:#0f172a; /* dark badge for transparent PNGs */
+      border-radius:10px;
+      padding:6px 8px;
+      box-shadow:0 2px 8px rgba(0,0,0,.4);
+      display:block;
+    }
+    @media (max-width: 860px){
+      header .brand-logo{height:50px}
+    }
 
     .cta{display:grid; grid-template-columns: 1.2fr .8fr; gap:24px; align-items:center}
     .cta .panel{padding:24px; border-radius:18px; background:linear-gradient(180deg, rgba(15,23,42,.9), rgba(15,23,42,.7)); border:1px solid rgba(255,255,255,.08)}
@@ -109,7 +114,8 @@
   <header>
     <div class="container nav" role="navigation" aria-label="Main">
       <div class="brand">
-        <img src="logo.png" alt="ElevatED Automotive Solutions logo" class="brand-logo" />
+        <!-- Use a root-absolute path so it works on subpages too -->
+        <img src="/images/logo.png" alt="ElevatED Automotive Solutions logo" class="brand-logo" />
         <h1 aria-label="ElevatED Automotive Solutions">ElevatED Automotive Solutions</h1>
       </div>
       <nav class="menu" aria-label="Primary">
@@ -268,27 +274,22 @@
   </footer>
 
   <script>
-    // Mobile menu toggle (simple)
     function toggleMenu(){
       const nav = document.querySelector('.menu');
       if(!nav) return; nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
       if(nav.style.display === 'flex'){ nav.style.gap = '20px'; nav.style.flexDirection = 'column'; }
     }
 
-    // Contact form placeholder handler
     async function handleSubmit(e){
       e.preventDefault();
       const status = document.getElementById('form-status');
       status.textContent = 'Sending…';
-
-      // Replace with a real endpoint later (e.g., Vercel serverless function or Formspree)
       await new Promise(r=>setTimeout(r, 700));
       status.textContent = 'Thanks! We\'ll be in touch shortly.';
       e.target.reset();
       return false;
     }
 
-    // Year
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>

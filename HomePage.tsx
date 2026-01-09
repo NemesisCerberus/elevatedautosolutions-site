@@ -79,17 +79,44 @@ const HomePage: React.FC<HomePageProps> = ({ navigateToPage }) => {
             </div>
             <div className="product-images" style={{ 
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-              gap: '16px',
+              gridTemplateColumns: '1.2fr 1fr',
+              gap: '12px',
               alignItems: 'start'
             }}>
-              <img src="/Trivia Gameplay 1.png" alt="ElevatED AI Trivia Professor - Game board selection" style={{ width: '100%', borderRadius: '12px', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }} />
-              <img src="/Trivia Gameplay 2.png" alt="ElevatED AI Trivia Professor - Question interface" style={{ width: '100%', borderRadius: '12px', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }} />
-              <img src="/Trivia Gameplay 3.png" alt="ElevatED AI Trivia Professor - Answer submission" style={{ width: '100%', borderRadius: '12px', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }} />
-              <img src="/Trivia Gameplay 4.png" alt="ElevatED AI Trivia Professor - AI feedback" style={{ width: '100%', borderRadius: '12px', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }} />
-              <img src="/Trivia Gameplay 5.png" alt="ElevatED AI Trivia Professor - Score tracking" style={{ width: '100%', borderRadius: '12px', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }} />
-              <img src="/Trivia Gameplay 6.png" alt="ElevatED AI Trivia Professor - Game progress" style={{ width: '100%', borderRadius: '12px', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }} />
-              <img src="/Trivia Gameplay 7.png" alt="ElevatED AI Trivia Professor - Results summary" style={{ width: '100%', borderRadius: '12px', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }} />
+              <img src="/Trivia Gameplay 1.png" alt="ElevatED AI Trivia Professor - Game board selection" 
+                style={{ 
+                  width: '100%', 
+                  gridRow: 'span 2',
+                  borderRadius: '16px', 
+                  boxShadow: '0 8px 24px rgba(0,0,0,0.15)',
+                  border: '2px solid rgba(59, 130, 246, 0.2)'
+                }} />
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
+                <img src="/Trivia Gameplay 2.png" alt="ElevatED AI Trivia Professor - Question interface" 
+                  style={{ width: '100%', borderRadius: '12px', boxShadow: '0 4px 12px rgba(0,0,0,0.1)', cursor: 'pointer', transition: 'transform 0.2s' }} 
+                  onMouseOver={(e) => (e.currentTarget.style.transform = 'scale(1.05)')}
+                  onMouseOut={(e) => (e.currentTarget.style.transform = 'scale(1)')} />
+                <img src="/Trivia Gameplay 3.png" alt="ElevatED AI Trivia Professor - Answer submission" 
+                  style={{ width: '100%', borderRadius: '12px', boxShadow: '0 4px 12px rgba(0,0,0,0.1)', cursor: 'pointer', transition: 'transform 0.2s' }}
+                  onMouseOver={(e) => (e.currentTarget.style.transform = 'scale(1.05)')}
+                  onMouseOut={(e) => (e.currentTarget.style.transform = 'scale(1)')} />
+                <img src="/Trivia Gameplay 4.png" alt="ElevatED AI Trivia Professor - AI feedback" 
+                  style={{ width: '100%', borderRadius: '12px', boxShadow: '0 4px 12px rgba(0,0,0,0.1)', cursor: 'pointer', transition: 'transform 0.2s' }}
+                  onMouseOver={(e) => (e.currentTarget.style.transform = 'scale(1.05)')}
+                  onMouseOut={(e) => (e.currentTarget.style.transform = 'scale(1)')} />
+                <img src="/Trivia Gameplay 5.png" alt="ElevatED AI Trivia Professor - Score tracking" 
+                  style={{ width: '100%', borderRadius: '12px', boxShadow: '0 4px 12px rgba(0,0,0,0.1)', cursor: 'pointer', transition: 'transform 0.2s' }}
+                  onMouseOver={(e) => (e.currentTarget.style.transform = 'scale(1.05)')}
+                  onMouseOut={(e) => (e.currentTarget.style.transform = 'scale(1)')} />
+                <img src="/Trivia Gameplay 6.png" alt="ElevatED AI Trivia Professor - Game progress" 
+                  style={{ width: '100%', borderRadius: '12px', boxShadow: '0 4px 12px rgba(0,0,0,0.1)', cursor: 'pointer', transition: 'transform 0.2s' }}
+                  onMouseOver={(e) => (e.currentTarget.style.transform = 'scale(1.05)')}
+                  onMouseOut={(e) => (e.currentTarget.style.transform = 'scale(1)')} />
+                <img src="/Trivia Gameplay 7.png" alt="ElevatED AI Trivia Professor - Results summary" 
+                  style={{ width: '100%', borderRadius: '12px', boxShadow: '0 4px 12px rgba(0,0,0,0.1)', cursor: 'pointer', transition: 'transform 0.2s' }}
+                  onMouseOver={(e) => (e.currentTarget.style.transform = 'scale(1.05)')}
+                  onMouseOut={(e) => (e.currentTarget.style.transform = 'scale(1)')} />
+              </div>
             </div>
           </div>
         </div>

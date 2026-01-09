@@ -1,10 +1,29 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 interface HomePageProps {
   navigateToPage: (page: string) => void;
 }
 
 const HomePage: React.FC<HomePageProps> = ({ navigateToPage }) => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  
+  const triviaImages = [
+    { src: '/Trivia Gameplay 1.png', alt: 'Game board selection' },
+    { src: '/Trivia Gameplay 2.png', alt: 'Question interface' },
+    { src: '/Trivia Gameplay 3.png', alt: 'Answer submission' },
+    { src: '/Trivia Gameplay 4.png', alt: 'AI feedback' },
+    { src: '/Trivia Gameplay 5.png', alt: 'Score tracking' },
+    { src: '/Trivia Gameplay 6.png', alt: 'Game progress' },
+    { src: '/Trivia Gameplay 7.png', alt: 'Results summary' },
+  ];
+
+  const nextImage = () => {
+    setCurrentImageIndex((prev) => (prev + 1) % triviaImages.length);
+  };
+
+  const prevImage = () => {
+    setCurrentImageIndex((prev) => (prev - 1 + triviaImages.length) % triviaImages.length);
+  };
   useEffect(() => {
     // Intersection Observer for scroll animations
     const observerOptions = {
@@ -59,44 +78,126 @@ const HomePage: React.FC<HomePageProps> = ({ navigateToPage }) => {
       <section id="ai-professor" style={{ padding: '120px 0', background: 'linear-gradient(0deg, #FFFFFF, var(--off-white))' }}>
         <div className="container">
           <div className="product-highlight-grid">
-            <div className="product-text">
-              <div className="section-title">Featured Product</div>
-              <h3 style={{ fontSize: '44px', margin: '0 0 16px', fontWeight: 900, letterSpacing: '-1.5px', color: 'var(--charcoal)' }}>
-                The ElevatED AI Trivia Professor
-              </h3>
-              <p style={{ fontSize: '18px', color: 'var(--soft-gray)', lineHeight: 1.8 }}>
-                Our premier AI-powered trivia platform transforms any content into an engaging educational game. It's the ultimate tool for educators, trainers, and trivia lovers.
-              </p>
-              <ul className="feature-list">
-                <li><CheckmarkIcon /> <strong>AI-Generated Content:</strong> Powered by Google Gemini, create custom trivia on any topic in seconds.</li>
-                <li><CheckmarkIcon /> <strong>Document Upload Games:</strong> Instantly create games from your own PDFs, study guides, or company docs.</li>
-                <li><CheckmarkIcon /> <strong>Smart Answer Assessment:</strong> AI evaluates free-form answers, providing intelligent, nuanced feedback.</li>
-                <li><CheckmarkIcon /> <strong>Multiple Game Modes:</strong> Compete solo, against an AI, or in a real-time classroom showdown.</li>
-              </ul>
-              <div className="btn primary" onClick={() => navigateToPage('trivia')}>
-                Try It Free Now
-              </div>
-            </div>
-            <div className="product-images" style={{ 
-              display: 'grid',
-              gridTemplateColumns: '1.2fr 1fr',
-              gap: '12px',
-              alignItems: 'start'
+            <dposition: 'relative',
+              width: '100%',
+              maxWidth: '600px',
+              margin: '0 auto'
             }}>
-              <img src="/Trivia Gameplay 1.png" alt="ElevatED AI Trivia Professor - Game board selection" 
-                style={{ 
-                  width: '100%', 
-                  gridRow: 'span 2',
-                  borderRadius: '16px', 
-                  boxShadow: '0 8px 24px rgba(0,0,0,0.15)',
-                  border: '2px solid rgba(59, 130, 246, 0.2)'
-                }} />
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
-                <img src="/Trivia Gameplay 2.png" alt="ElevatED AI Trivia Professor - Question interface" 
-                  style={{ width: '100%', borderRadius: '12px', boxShadow: '0 4px 12px rgba(0,0,0,0.1)', cursor: 'pointer', transition: 'transform 0.2s' }} 
-                  onMouseOver={(e) => (e.currentTarget.style.transform = 'scale(1.05)')}
-                  onMouseOut={(e) => (e.currentTarget.style.transform = 'scale(1)')} />
-                <img src="/Trivia Gameplay 3.png" alt="ElevatED AI Trivia Professor - Answer submission" 
+              {/* Main Image */}
+              <div style={{
+                position: 'relative',
+                borderRadius: '16px',
+                overflow: 'hidden',
+                boxShadow: '0 8px 24px rgba(0,0,0,0.15)',
+                border: '2px solid rgba(59, 130, 246, 0.2)',
+                aspectRatio: '16/9',
+                background: 'var(--off-white)'
+              }}>
+                <img 
+                  src={triviaImages[currentImageIndex].src} 
+                  alt={`ElevatED AI Trivia Professor - ${triviaImages[currentImageIndex].alt}`}
+                  style={{ 
+                    width: '100%', 
+                    height: '100%',
+                    objectFit: 'contain',
+                    transition: 'opacity 0.3s ease'
+                  }} 
+                />
+                
+                {/* Previous Button */}
+                <button
+                  onClick={prevImage}
+                  style={{
+                    position: 'absolute',
+                    left: '16px',
+                    top: '50%',
+                    transform: 'translateY(-50%)',
+                    background: 'rgba(0, 0, 0, 0.6)',
+                    border: 'none',
+                    borderRadius: '50%',
+                    width: '48px',
+                    height: '48px',
+                    color: 'white',
+                    fontSize: '24px',
+                    cursor: 'pointer',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    transition: 'background 0.2s',
+                    zIndex: 2
+                  }}
+                  onMouseOver={(e) => (e.currentTarget.style.background = 'rgba(0, 0, 0, 0.8)')}
+                  onMouseOut={(e) => (e.currentTarget.style.background = 'rgba(0, 0, 0, 0.6)')}
+                  aria-label="Previous image"
+                >
+                  ‹
+                </button>
+                
+                {/* Next Button */}
+                <button
+                  onClick={nextImage}
+                  style={{
+                    position: 'absolute',
+                    right: '16px',
+                    top: '50%',
+                    transform: 'translateY(-50%)',
+                    background: 'rgba(0, 0, 0, 0.6)',
+                    border: 'none',
+                    borderRadius: '50%',
+                    width: '48px',
+                    height: '48px',
+                    color: 'white',
+                    fontSize: '24px',
+                    cursor: 'pointer',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    transition: 'background 0.2s',
+                    zIndex: 2
+                  }}
+                  onMouseOver={(e) => (e.currentTarget.style.background = 'rgba(0, 0, 0, 0.8)')}
+                  onMouseOut={(e) => (e.currentTarget.style.background = 'rgba(0, 0, 0, 0.6)')}
+                  aria-label="Next image"
+                >
+                  ›
+                </button>
+              </div>
+              
+              {/* Dot Indicators */}
+              <div style={{
+                display: 'flex',
+                justifyContent: 'center',
+                gap: '8px',
+                marginTop: '16px'
+              }}>
+                {triviaImages.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentImageIndex(index)}
+                    style={{
+                      width: '10px',
+                      height: '10px',
+                      borderRadius: '50%',
+                      border: 'none',
+                      background: index === currentImageIndex ? 'var(--primary-blue)' : 'rgba(59, 130, 246, 0.3)',
+                      cursor: 'pointer',
+                      transition: 'all 0.3s',
+                      padding: 0
+                    }}
+                    aria-label={`Go to image ${index + 1}`}
+                  />
+                ))}
+              </div>
+              
+              {/* Image Counter */}
+              <div style={{
+                textAlign: 'center',
+                marginTop: '8px',
+                fontSize: '14px',
+                color: 'var(--soft-gray)',
+                fontWeight: 600
+              }}>
+                {currentImageIndex + 1} / {triviaImages.length}nswer submission" 
                   style={{ width: '100%', borderRadius: '12px', boxShadow: '0 4px 12px rgba(0,0,0,0.1)', cursor: 'pointer', transition: 'transform 0.2s' }}
                   onMouseOver={(e) => (e.currentTarget.style.transform = 'scale(1.05)')}
                   onMouseOut={(e) => (e.currentTarget.style.transform = 'scale(1)')} />

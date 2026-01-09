@@ -40,7 +40,7 @@ const App: React.FC = () => {
     }
   };
 
-  const logoSrc = "https://storage.googleapis.com/ai-studio-bucket-149429434961-us-west1/services/public-assets/elevated-images/EA%20Logo.png";
+  const logoSrc = "/ElevatED White Background.png";
 
   return (
     <>

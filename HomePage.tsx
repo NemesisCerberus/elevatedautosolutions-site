@@ -77,9 +77,19 @@ const HomePage: React.FC<HomePageProps> = ({ navigateToPage }) => {
                 Try It Free Now
               </div>
             </div>
-            <div className="product-images">
-              <img src="https://storage.googleapis.com/ai-studio-bucket-149429434961-us-west1/services/public-assets/elevated-images/ElevatEd%20AI%20Trivia%20Professor%201.png" alt="ElevatED AI Trivia Professor gameplay screenshot showing a trivia board." />
-              <img src="https://storage.googleapis.com/ai-studio-bucket-149429434961-us-west1/services/public-assets/elevated-images/ElevatEd%20AI%20Trivia%20Professor%202.png" alt="ElevatED AI Trivia Professor gameplay screenshot showing a question and answer interface." />
+            <div className="product-images" style={{ 
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+              gap: '16px',
+              alignItems: 'start'
+            }}>
+              <img src="/Trivia Gameplay 1.png" alt="ElevatED AI Trivia Professor - Game board selection" style={{ width: '100%', borderRadius: '12px', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }} />
+              <img src="/Trivia Gameplay 2.png" alt="ElevatED AI Trivia Professor - Question interface" style={{ width: '100%', borderRadius: '12px', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }} />
+              <img src="/Trivia Gameplay 3.png" alt="ElevatED AI Trivia Professor - Answer submission" style={{ width: '100%', borderRadius: '12px', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }} />
+              <img src="/Trivia Gameplay 4.png" alt="ElevatED AI Trivia Professor - AI feedback" style={{ width: '100%', borderRadius: '12px', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }} />
+              <img src="/Trivia Gameplay 5.png" alt="ElevatED AI Trivia Professor - Score tracking" style={{ width: '100%', borderRadius: '12px', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }} />
+              <img src="/Trivia Gameplay 6.png" alt="ElevatED AI Trivia Professor - Game progress" style={{ width: '100%', borderRadius: '12px', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }} />
+              <img src="/Trivia Gameplay 7.png" alt="ElevatED AI Trivia Professor - Results summary" style={{ width: '100%', borderRadius: '12px', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }} />
             </div>
           </div>
         </div>

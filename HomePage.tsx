@@ -216,26 +216,7 @@ const HomePage: React.FC<HomePageProps> = ({ navigateToPage }) => {
                 color: 'var(--soft-gray)',
                 fontWeight: 600
               }}>
-                {currentImageIndex + 1} / {triviaImages.length}nswer submission" 
-                  style={{ width: '100%', borderRadius: '12px', boxShadow: '0 4px 12px rgba(0,0,0,0.1)', cursor: 'pointer', transition: 'transform 0.2s' }}
-                  onMouseOver={(e) => (e.currentTarget.style.transform = 'scale(1.05)')}
-                  onMouseOut={(e) => (e.currentTarget.style.transform = 'scale(1)')} />
-                <img src="/Trivia Gameplay 4.png" alt="ElevatED AI Trivia Professor - AI feedback" 
-                  style={{ width: '100%', borderRadius: '12px', boxShadow: '0 4px 12px rgba(0,0,0,0.1)', cursor: 'pointer', transition: 'transform 0.2s' }}
-                  onMouseOver={(e) => (e.currentTarget.style.transform = 'scale(1.05)')}
-                  onMouseOut={(e) => (e.currentTarget.style.transform = 'scale(1)')} />
-                <img src="/Trivia Gameplay 5.png" alt="ElevatED AI Trivia Professor - Score tracking" 
-                  style={{ width: '100%', borderRadius: '12px', boxShadow: '0 4px 12px rgba(0,0,0,0.1)', cursor: 'pointer', transition: 'transform 0.2s' }}
-                  onMouseOver={(e) => (e.currentTarget.style.transform = 'scale(1.05)')}
-                  onMouseOut={(e) => (e.currentTarget.style.transform = 'scale(1)')} />
-                <img src="/Trivia Gameplay 6.png" alt="ElevatED AI Trivia Professor - Game progress" 
-                  style={{ width: '100%', borderRadius: '12px', boxShadow: '0 4px 12px rgba(0,0,0,0.1)', cursor: 'pointer', transition: 'transform 0.2s' }}
-                  onMouseOver={(e) => (e.currentTarget.style.transform = 'scale(1.05)')}
-                  onMouseOut={(e) => (e.currentTarget.style.transform = 'scale(1)')} />
-                <img src="/Trivia Gameplay 7.png" alt="ElevatED AI Trivia Professor - Results summary" 
-                  style={{ width: '100%', borderRadius: '12px', boxShadow: '0 4px 12px rgba(0,0,0,0.1)', cursor: 'pointer', transition: 'transform 0.2s' }}
-                  onMouseOver={(e) => (e.currentTarget.style.transform = 'scale(1.05)')}
-                  onMouseOut={(e) => (e.currentTarget.style.transform = 'scale(1)')} />
+                {currentImageIndex + 1} / {triviaImages.length}
               </div>
             </div>
           </div>

@@ -78,7 +78,26 @@ const HomePage: React.FC<HomePageProps> = ({ navigateToPage }) => {
       <section id="ai-professor" style={{ padding: '120px 0', background: 'linear-gradient(0deg, #FFFFFF, var(--off-white))' }}>
         <div className="container">
           <div className="product-highlight-grid">
-            <dposition: 'relative',
+            <div className="product-text">
+              <div className="section-title">Featured Product</div>
+              <h3 style={{ fontSize: '44px', margin: '0 0 16px', fontWeight: 900, letterSpacing: '-1.5px', color: 'var(--charcoal)' }}>
+                The ElevatED AI Trivia Professor
+              </h3>
+              <p style={{ fontSize: '18px', color: 'var(--soft-gray)', lineHeight: 1.8 }}>
+                Our premier AI-powered trivia platform transforms any content into an engaging educational game. It's the ultimate tool for educators, trainers, and trivia lovers.
+              </p>
+              <ul className="feature-list">
+                <li><CheckmarkIcon /> <strong>AI-Generated Content:</strong> Powered by Google Gemini, create custom trivia on any topic in seconds.</li>
+                <li><CheckmarkIcon /> <strong>Document Upload Games:</strong> Instantly create games from your own PDFs, study guides, or company docs.</li>
+                <li><CheckmarkIcon /> <strong>Smart Answer Assessment:</strong> AI evaluates free-form answers, providing intelligent, nuanced feedback.</li>
+                <li><CheckmarkIcon /> <strong>Multiple Game Modes:</strong> Compete solo, against an AI, or in a real-time classroom showdown.</li>
+              </ul>
+              <div className="btn primary" onClick={() => navigateToPage('trivia')}>
+                Try It Free Now
+              </div>
+            </div>
+            <div className="product-images" style={{ 
+              position: 'relative',
               width: '100%',
               maxWidth: '600px',
               margin: '0 auto'

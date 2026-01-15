@@ -65,11 +65,11 @@ const HomePage: React.FC<HomePageProps> = ({ navigateToPage }) => {
         <div className="container hero-inner">
           <div>
             <span className="badge">✨ Elevating Education • Service Excellence</span>
-            <h2>Transform Your <span>Automotive Future</span> With Cutting-Edge Training</h2>
+            <h2>Developing Today's Workforce and Tomorrow's Technicians</h2>
             <p>We deliver cutting-edge automotive training that empowers individuals, professionals, and organizations to thrive in a rapidly evolving industry.</p>
             <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
-              <a href="#services" className="btn primary">Explore Our Services</a>
-              <a href="#about" className="btn secondary">Learn More</a>
+              <a href="#" onClick={(e) => { e.preventDefault(); navigateToPage('workforce'); }} className="btn primary">Book a Demo</a>
+              <a href="#" onClick={(e) => { e.preventDefault(); navigateToPage('schedule-consultation'); }} className="btn secondary">Schedule a Consultation</a>
             </div>
           </div>
         </div>
@@ -92,8 +92,8 @@ const HomePage: React.FC<HomePageProps> = ({ navigateToPage }) => {
                 <li><CheckmarkIcon /> <strong>Smart Answer Assessment:</strong> AI evaluates free-form answers, providing intelligent, nuanced feedback.</li>
                 <li><CheckmarkIcon /> <strong>Multiple Game Modes:</strong> Compete solo, against an AI, or in a real-time classroom showdown.</li>
               </ul>
-              <div className="btn primary" onClick={() => navigateToPage('trivia')}>
-                Try It Free Now
+              <div className="btn primary" onClick={() => navigateToPage('trivia')} style={{ cursor: 'pointer' }}>
+                Try It Now
               </div>
             </div>
             <div className="product-images" style={{ 
@@ -283,7 +283,16 @@ const HomePage: React.FC<HomePageProps> = ({ navigateToPage }) => {
           </div>
           
           <div className="card">
-              <p style={{ fontSize: '20px', lineHeight: 1.9, marginBottom: '32px' }}>
+            {/* Origin Story */}
+            <div style={{ marginBottom: '48px' }}>
+              <h4 style={{ fontSize: '24px', fontWeight: 700, marginBottom: '16px', color: 'var(--charcoal)' }}>Our Story</h4>
+              <p style={{ fontSize: '17px', lineHeight: 1.8, color: 'var(--soft-gray)', maxWidth: '800px' }}>
+                We saw a critical gap: automotive education lagged behind the technology transforming the industry. Technicians and educators needed cutting-edge tools to bridge real-world diagnostics with classroom learning, but solutions were fragmented and outdated. ElevatED was born to modernize technical training through AI-powered tools that empower instructors and engage students—making training faster, clearer, and more effective.
+              </p>
+            </div>
+
+            {/* Company Overview */}
+            <p style={{ fontSize: '20px', lineHeight: 1.9, marginBottom: '32px' }}>
               ElevatED Automotive Solutions helps transportation programs and industry teams apply AI where it actually moves the needle. We pair real‑world shop experience with modern tooling to make training <strong style={{ color: 'var(--blue-dark)' }}>faster, clearer, and more engaging.</strong>
             </p>
             
@@ -293,6 +302,121 @@ const HomePage: React.FC<HomePageProps> = ({ navigateToPage }) => {
                 <strong>✓</strong> Interactive, mentor‑guided lessons and apps<br />
                 <strong>✓</strong> Real-world shop experience meets cutting-edge technology
               </p>
+            </div>
+
+            {/* Founders Section */}
+            <div style={{ marginTop: '60px', paddingTop: '40px', borderTop: '2px solid rgba(59, 130, 246, 0.1)' }}>
+              <h4 style={{ fontSize: '24px', fontWeight: 700, marginBottom: '32px', color: 'var(--charcoal)', textAlign: 'center' }}>Meet the Founders</h4>
+              
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '32px', marginBottom: '40px' }}>
+                {/* Matt Boudinot */}
+                <div style={{
+                  textAlign: 'center',
+                  padding: '24px',
+                  borderRadius: '16px',
+                  background: 'rgba(59, 130, 246, 0.05)',
+                  border: '2px solid rgba(59, 130, 246, 0.1)'
+                }}>
+                  <div 
+                    style={{
+                      width: '160px',
+                      height: '160px',
+                      borderRadius: '12px',
+                      background: 'linear-gradient(135deg, #3B82F6, #06B6D4)',
+                      margin: '0 auto 16px',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      fontSize: '60px',
+                      fontWeight: 700,
+                      color: 'white'
+                    }}
+                  >
+                    MB
+                  </div>
+                  <h5 style={{ fontSize: '20px', fontWeight: 700, margin: '12px 0', color: 'var(--charcoal)' }}>Matt Boudinot</h5>
+                  <p style={{ fontSize: '14px', fontWeight: 600, color: 'var(--primary-blue)', margin: '8px 0' }}>Co-Founder &amp; AI Integration Strategist</p>
+                  
+                  <div style={{ fontSize: '14px', lineHeight: 1.6, color: 'var(--soft-gray)', margin: '16px 0', textAlign: 'left' }}>
+                    <p><strong>20+ years</strong> automotive industry | <strong>11 years</strong> higher education</p>
+                    <p>Specializes in AI curriculum development, ADAS/hybrid/electrical diagnostics, and immersive learning experiences.</p>
+                    <p style={{ fontSize: '13px', fontStyle: 'italic', color: 'var(--steel-gray)' }}>Outstanding Educator Award (2024/2025)</p>
+                  </div>
+                  
+                  <a 
+                    href="https://www.linkedin.com/in/matthewboudinot/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '8px',
+                      color: 'var(--primary-blue)',
+                      textDecoration: 'none',
+                      fontWeight: 600,
+                      marginTop: '12px',
+                      fontSize: '14px'
+                    }}
+                  >
+                    <span>LinkedIn Profile</span>
+                    <span style={{ fontSize: '16px' }}>↗</span>
+                  </a>
+                </div>
+
+                {/* Jeff Copeland - Placeholder */}
+                <div style={{
+                  textAlign: 'center',
+                  padding: '24px',
+                  borderRadius: '16px',
+                  background: 'rgba(59, 130, 246, 0.05)',
+                  border: '2px solid rgba(59, 130, 246, 0.1)'
+                }}>
+                  <div 
+                    style={{
+                      width: '160px',
+                      height: '160px',
+                      borderRadius: '12px',
+                      background: 'linear-gradient(135deg, #3B82F6, #06B6D4)',
+                      margin: '0 auto 16px',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      fontSize: '60px',
+                      fontWeight: 700,
+                      color: 'white'
+                    }}
+                  >
+                    JC
+                  </div>
+                  <h5 style={{ fontSize: '20px', fontWeight: 700, margin: '12px 0', color: 'var(--charcoal)' }}>Jeff Copeland</h5>
+                  <p style={{ fontSize: '14px', fontWeight: 600, color: 'var(--primary-blue)', margin: '8px 0' }}>Co-Founder &amp; Automotive Technology Instructor</p>
+                  
+                  <div style={{ fontSize: '14px', lineHeight: 1.6, color: 'var(--soft-gray)', margin: '16px 0', textAlign: 'left' }}>
+                    <p><strong>23+ years</strong> automotive education field</p>
+                    <p>Expert in instructional design, AI integration, and interactive simulations for real-world technical training.</p>
+                    <p style={{ fontSize: '13px', fontStyle: 'italic', color: 'var(--steel-gray)' }}>23 years continuous service in higher education</p>
+                  </div>
+                  
+                  <a 
+                    href="https://www.linkedin.com/in/jeff-copeland-b340391a/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '8px',
+                      color: 'var(--primary-blue)',
+                      textDecoration: 'none',
+                      fontWeight: 600,
+                      marginTop: '12px',
+                      fontSize: '14px'
+                    }}
+                  >
+                    <span>LinkedIn Profile</span>
+                    <span style={{ fontSize: '16px' }}>↗</span>
+                  </a>
+                </div>
+              </div>
             </div>
             
             <div style={{ marginTop: '40px', paddingTop: '32px', borderTop: '2px solid rgba(59, 130, 246, 0.1)' }}>

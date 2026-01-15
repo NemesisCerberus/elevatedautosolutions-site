@@ -52,9 +52,9 @@ const App: React.FC = () => {
               <h1 aria-label="ElevatED Automotive Solutions">ElevatED Automotive Solutions</h1>
             </a>
             <nav className="menu" aria-label="Primary">
-              <a href="#services" onClick={(e) => { e.preventDefault(); navigateToHomeAndScroll('#services'); }}>Services</a>
+              <a href="#" onClick={(e) => { e.preventDefault(); navigateToPage('workforce'); }}>Workforce Training</a>
+              <a href="#" onClick={(e) => { e.preventDefault(); navigateToPage('education'); }}>Educational Institutions</a>
               <a href="#about" onClick={(e) => { e.preventDefault(); navigateToHomeAndScroll('#about'); }}>About</a>
-              <a href="#" onClick={(e) => { e.preventDefault(); navigateToPage('trivia'); }}>AI Professor</a>
               <a href="mailto:info@elevatedautosolutions.com">Contact</a>
             </nav>
           </div>

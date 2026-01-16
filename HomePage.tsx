@@ -367,23 +367,19 @@ const HomePage: React.FC<HomePageProps> = ({ navigateToPage }) => {
                   background: 'rgba(59, 130, 246, 0.05)',
                   border: '2px solid rgba(59, 130, 246, 0.1)'
                 }}>
-                  <div 
+                  <img 
+                    src="/Jeff Copeland.webp" 
+                    alt="Jeff Copeland, Co-Founder & Automotive Technology Instructor"
                     style={{
                       width: '160px',
                       height: '160px',
                       borderRadius: '12px',
-                      background: 'linear-gradient(135deg, #3B82F6, #06B6D4)',
-                      margin: '0 auto 16px',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      fontSize: '60px',
-                      fontWeight: 700,
-                      color: 'white'
+                      objectFit: 'cover',
+                      marginBottom: '16px',
+                      display: 'block',
+                      margin: '0 auto 16px'
                     }}
-                  >
-                    JC
-                  </div>
+                  />
                   <h5 style={{ fontSize: '20px', fontWeight: 700, margin: '12px 0', color: 'var(--charcoal)' }}>Jeff Copeland</h5>
                   <p style={{ fontSize: '14px', fontWeight: 600, color: 'var(--primary-blue)', margin: '8px 0' }}>Co-Founder &amp; Automotive Technology Instructor</p>
                   

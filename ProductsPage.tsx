@@ -338,8 +338,8 @@ const ProductsPage: React.FC<ProductsPageProps> = ({ navigateToPage }) => {
       </section>
 
       {/* ShopReady Learning Platform Product */}
-      <section style={{ padding: '120px 0', background: '#e8f4ff !important' }}>
-        <div className="container" style={{ background: '#e8f4ff !important' }}>
+      <section style={{ padding: '120px 0', background: 'linear-gradient(135deg, #3B82F6 0%, #06B6D4 100%)' }}>
+        <div className="container">
           <div style={{
             display: 'grid',
             gridTemplateColumns: '1fr 1fr',
@@ -460,77 +460,77 @@ const ProductsPage: React.FC<ProductsPageProps> = ({ navigateToPage }) => {
 
             {/* Left - Content */}
             <div style={{ order: 1 }}>
-              <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--primary-blue)', marginBottom: '12px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+              <div style={{ fontSize: '14px', fontWeight: 600, color: 'white', marginBottom: '12px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
                 Product
               </div>
               <h2 style={{ 
                 fontSize: '48px', 
                 fontWeight: 900, 
                 marginBottom: '24px', 
-                color: 'var(--charcoal)', 
+                color: 'white', 
                 letterSpacing: '-1px',
                 lineHeight: 1.2
               }}>
                 ShopReady Learning Platform
               </h2>
-              <p style={{ fontSize: '20px', color: 'var(--soft-gray)', lineHeight: 1.8, marginBottom: '32px' }}>
+              <p style={{ fontSize: '20px', color: 'white', lineHeight: 1.8, marginBottom: '32px' }}>
                 Master Automotive Technology with AI-Powered Training. Comprehensive, bite-sized lessons and intelligent mentoring for technicians at every level.
               </p>
 
               <div style={{ marginBottom: '32px' }}>
-                <h3 style={{ fontSize: '18px', fontWeight: 700, color: 'var(--charcoal)', marginBottom: '16px' }}>
+                <h3 style={{ fontSize: '18px', fontWeight: 700, color: 'white', marginBottom: '16px' }}>
                   Key Features
                 </h3>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
                   <li style={{ display: 'flex', gap: '12px', marginBottom: '16px', alignItems: 'flex-start' }}>
                     <CheckmarkIcon />
                     <div>
-                      <strong style={{ display: 'block', color: 'var(--charcoal)' }}>AI-Powered R.A.C.E. Mentor:</strong>
-                      <span style={{ color: 'var(--soft-gray)' }}>24/7 personalized help for every question and challenge.</span>
+                      <strong style={{ display: 'block', color: 'white' }}>AI-Powered R.A.C.E. Mentor:</strong>
+                      <span style={{ color: 'rgba(255,255,255,0.85)' }}>24/7 personalized help for every question and challenge.</span>
                     </div>
                   </li>
                   <li style={{ display: 'flex', gap: '12px', marginBottom: '16px', alignItems: 'flex-start' }}>
                     <CheckmarkIcon />
                     <div>
-                      <strong style={{ display: 'block', color: 'var(--charcoal)' }}>1,000+ Bite-Sized Lessons:</strong>
-                      <span style={{ color: 'var(--soft-gray)' }}>690+ technical ASE topics + 376+ essential soft skills.</span>
+                      <strong style={{ display: 'block', color: 'white' }}>1,000+ Bite-Sized Lessons:</strong>
+                      <span style={{ color: 'rgba(255,255,255,0.85)' }}>690+ technical ASE topics + 376+ essential soft skills.</span>
                     </div>
                   </li>
                   <li style={{ display: 'flex', gap: '12px', marginBottom: '16px', alignItems: 'flex-start' }}>
                     <CheckmarkIcon />
                     <div>
-                      <strong style={{ display: 'block', color: 'var(--charcoal)' }}>Comprehensive ASE Coverage:</strong>
-                      <span style={{ color: 'var(--soft-gray)' }}>Engine repair, diagnostics, transmissions, brakes, and ADAS.</span>
+                      <strong style={{ display: 'block', color: 'white' }}>Comprehensive ASE Coverage:</strong>
+                      <span style={{ color: 'rgba(255,255,255,0.85)' }}>Engine repair, diagnostics, transmissions, brakes, and ADAS.</span>
                     </div>
                   </li>
                   <li style={{ display: 'flex', gap: '12px', marginBottom: '16px', alignItems: 'flex-start' }}>
                     <CheckmarkIcon />
                     <div>
-                      <strong style={{ display: 'block', color: 'var(--charcoal)' }}>Mobile-Optimized & Accessible:</strong>
-                      <span style={{ color: 'var(--soft-gray)' }}>Learn anywhere with voice accessibility and progress tracking.</span>
+                      <strong style={{ display: 'block', color: 'white' }}>Mobile-Optimized & Accessible:</strong>
+                      <span style={{ color: 'rgba(255,255,255,0.85)' }}>Learn anywhere with voice accessibility and progress tracking.</span>
                     </div>
                   </li>
                   <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
                     <CheckmarkIcon />
                     <div>
-                      <strong style={{ display: 'block', color: 'var(--charcoal)' }}>Personalized Learning Paths:</strong>
-                      <span style={{ color: 'var(--soft-gray)' }}>Streak rewards, achievement milestones, and adaptive progression.</span>
+                      <strong style={{ display: 'block', color: 'white' }}>Personalized Learning Paths:</strong>
+                      <span style={{ color: 'rgba(255,255,255,0.85)' }}>Streak rewards, achievement milestones, and adaptive progression.</span>
                     </div>
                   </li>
                 </ul>
               </div>
 
               <div style={{
-                background: 'var(--off-white)',
+                background: 'rgba(255,255,255,0.15)',
                 padding: '24px',
                 borderRadius: '12px',
                 marginBottom: '32px',
-                borderLeft: '4px solid var(--primary-blue)'
+                borderLeft: '4px solid white'
               }}>
-                <h4 style={{ fontSize: '16px', fontWeight: 700, color: 'var(--charcoal)', marginBottom: '12px' }}>
+                <h4 style={{ fontSize: '16px', fontWeight: 700, color: 'white', marginBottom: '12px' }}>
                   Perfect For
                 </h4>
-                <p style={{ fontSize: '15px', color: 'var(--soft-gray)', margin: 0, lineHeight: 1.6 }}>
+                <p style={{ fontSize: '15px', color: 'rgba(255,255,255,0.85)', margin: 0, lineHeight: 1.6 }}>
                   Individual technicians seeking continuous learning, vocational students mastering core ASE competencies, educational institutions and training programs, and working professionals advancing their careers.
                 </p>
               </div>

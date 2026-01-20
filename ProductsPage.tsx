@@ -338,13 +338,14 @@ const ProductsPage: React.FC<ProductsPageProps> = ({ navigateToPage }) => {
       </section>
 
       {/* ShopReady Learning Platform Product */}
-      <section style={{ padding: '120px 0', background: '#FFFFFF' }}>
-        <div className="container">
+      <section style={{ padding: '120px 0', background: '#e8f4ff !important' }}>
+        <div className="container" style={{ background: '#e8f4ff !important' }}>
           <div style={{
             display: 'grid',
             gridTemplateColumns: '1fr 1fr',
             gap: '64px',
             alignItems: 'center',
+            background: '#e8f4ff !important',
             '@media (max-width: 1024px)': {
               gridTemplateColumns: '1fr',
               gap: '48px'
@@ -357,7 +358,7 @@ const ProductsPage: React.FC<ProductsPageProps> = ({ navigateToPage }) => {
                 overflow: 'hidden',
                 background: 'white',
                 boxShadow: '0 20px 60px rgba(0,0,0,0.12)',
-                maxWidth: '400px',
+                maxWidth: '280px',
                 margin: '0 auto'
               }}>
                 <img 

@@ -247,26 +247,27 @@ const HomePage: React.FC<HomePageProps> = ({ navigateToPage }) => {
             </article>
             
             <article className="feature" role="listitem">
-              <div className="badge" aria-hidden="true">🎓 Aspiring Techs</div>
-              <h4>Professional Training</h4>
-              <p><strong>Purpose:</strong> Provide career-ready, certification-aligned training for future technicians</p>
+              <div className="badge" aria-hidden="true">🎓 Educational Institutions</div>
+              <h4>Institutional Learning</h4>
+              <p><strong>Purpose:</strong> Empower schools and colleges with modern, AI-driven curriculum and assessments</p>
               <ul>
-                <li>Comprehensive ASE prep modules</li>
-                <li>System-specific virtual courses</li>
-                <li>Career development tracks</li>
+                <li>AI-powered lesson planning &amp; content generation</li>
+                <li>ASE-aligned curriculum development &amp; support</li>
+                <li>Interactive simulations and lab activities</li>
+                <li>Student engagement &amp; assessment tools</li>
                 <li>Instructor dashboards with progress tracking</li>
               </ul>
             </article>
             
             <article className="feature" role="listitem">
-              <div className="badge" aria-hidden="true">🏢 Organizations</div>
-              <h4>Business Solutions</h4>
-              <p><strong>Purpose:</strong> Deliver customized, high-impact training and consulting for teams</p>
+              <div className="badge" aria-hidden="true">🏢 Workforce Training</div>
+              <h4>Industry Solutions</h4>
+              <p><strong>Purpose:</strong> Keep technicians competitive through continuous upskilling and team development</p>
               <ul>
-                <li>On-site training services</li>
-                <li>Custom course bundles</li>
-                <li>Mentorship programs for techs &amp; instructors</li>
-                <li>Consulting for curriculum, operations, and retention</li>
+                <li>Just-in-time technical training (diagnostics, ADAS, hybrid systems)</li>
+                <li>Technician certification prep &amp; advancement</li>
+                <li>Mentorship &amp; leadership development programs</li>
+                <li>Shop consulting for team development &amp; retention</li>
               </ul>
             </article>
           </div>
@@ -422,6 +423,109 @@ const HomePage: React.FC<HomePageProps> = ({ navigateToPage }) => {
                 </a>
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="blog" style={{ padding: '120px 0', background: 'linear-gradient(0deg, var(--off-white), #FFFFFF)' }}>
+        <div className="container">
+          <div className="section-head">
+            <div>
+              <div className="section-title">From the Blog</div>
+              <h3>Insights & Industry Updates</h3>
+            </div>
+          </div>
+          
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+            gap: '32px',
+            marginBottom: '40px'
+          }}>
+            {/* Blog Post Card 1 */}
+            <article style={{
+              borderRadius: '16px',
+              overflow: 'hidden',
+              background: 'white',
+              border: '2px solid rgba(59, 130, 246, 0.1)',
+              boxShadow: '0 4px 12px rgba(0,0,0,0.08)',
+              transition: 'transform 0.3s, box-shadow 0.3s',
+              cursor: 'pointer'
+            }}
+            onMouseOver={(e) => {
+              e.currentTarget.style.transform = 'translateY(-4px)';
+              e.currentTarget.style.boxShadow = '0 8px 24px rgba(59, 130, 246, 0.15)';
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.style.transform = 'translateY(0)';
+              e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.08)';
+            }}
+            >
+              <div style={{
+                height: '200px',
+                background: 'linear-gradient(135deg, #3B82F6, #06B6D4)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                fontSize: '60px',
+                color: 'white',
+                fontWeight: 700
+              }}>
+                🎮
+              </div>
+              
+              <div style={{ padding: '24px' }}>
+                <div style={{ fontSize: '12px', fontWeight: 600, color: 'var(--primary-blue)', marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                  Product Spotlight
+                </div>
+                <h4 style={{ fontSize: '20px', fontWeight: 700, margin: '8px 0 12px', color: 'var(--charcoal)' }}>
+                  How Gamified Learning Increases Student Engagement
+                </h4>
+                <p style={{ fontSize: '14px', color: 'var(--soft-gray)', lineHeight: 1.6, marginBottom: '16px' }}>
+                  Discover how the ElevatED AI Trivia Professor transforms passive learning into an interactive experience that keeps students engaged and improves retention rates.
+                </p>
+                
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '16px', paddingTop: '16px', borderTop: '1px solid rgba(59, 130, 246, 0.1)' }}>
+                  <span style={{ fontSize: '12px', color: 'var(--steel-gray)' }}>Jan 20, 2026</span>
+                  <a href="#" onClick={(e) => e.preventDefault()} style={{
+                    color: 'var(--primary-blue)',
+                    textDecoration: 'none',
+                    fontWeight: 600,
+                    fontSize: '14px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '4px'
+                  }}>
+                    Read More <span style={{ fontSize: '12px' }}>→</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+          
+          <div style={{ textAlign: 'center' }}>
+            <a href="#" onClick={(e) => e.preventDefault()} style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '8px',
+              padding: '12px 24px',
+              borderRadius: '8px',
+              background: 'rgba(59, 130, 246, 0.1)',
+              color: 'var(--primary-blue)',
+              textDecoration: 'none',
+              fontWeight: 600,
+              fontSize: '14px',
+              transition: 'all 0.3s'
+            }}
+            onMouseOver={(e) => {
+              e.currentTarget.style.background = 'rgba(59, 130, 246, 0.2)';
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.style.background = 'rgba(59, 130, 246, 0.1)';
+            }}
+            >
+              View All Articles <span>→</span>
+            </a>
           </div>
         </div>
       </section>

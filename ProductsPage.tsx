@@ -725,6 +725,166 @@ const ProductsPage: React.FC<ProductsPageProps> = ({ navigateToPage }) => {
         </div>
       </section>
 
+      {/* LabBench Task Studio Product */}
+      <section style={{ padding: '120px 0', background: 'linear-gradient(135deg, #8B5CF6 0%, #3B82F6 100%)' }}>
+        <div className="container">
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: '1fr 1fr',
+            gap: '64px',
+            alignItems: 'center',
+            '@media (max-width: 1024px)': {
+              gridTemplateColumns: '1fr',
+              gap: '48px'
+            }
+          }}>
+            {/* Left - Carousel placeholder */}
+            <div>
+              <div style={{
+                borderRadius: '16px',
+                overflow: 'hidden',
+                background: 'white',
+                boxShadow: '0 20px 60px rgba(0,0,0,0.12)',
+                maxWidth: '280px',
+                margin: '0 auto',
+                aspectRatio: '4/3',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                color: 'var(--soft-gray)',
+                fontSize: '16px',
+                fontWeight: '600',
+                textAlign: 'center',
+                padding: '32px'
+              }}>
+                Images coming soon
+              </div>
+            </div>
+
+            {/* Right - Content */}
+            <div>
+              <div style={{ fontSize: '14px', fontWeight: 600, color: 'white', marginBottom: '12px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                Product
+              </div>
+              <h2 style={{ 
+                fontSize: '48px', 
+                fontWeight: 900, 
+                marginBottom: '24px', 
+                color: 'white', 
+                letterSpacing: '-1px',
+                lineHeight: 1.2
+              }}>
+                LabBench Task Studio
+              </h2>
+              <p style={{ fontSize: '20px', color: 'white', lineHeight: 1.8, marginBottom: '32px' }}>
+                Build Custom AI-Powered Task Sheets for Your Students in Minutes. Transform your paper task sheets into interactive AI-guided learning experiences. No coding required.
+              </p>
+
+              <div style={{ marginBottom: '32px' }}>
+                <h3 style={{ fontSize: '18px', fontWeight: 700, color: 'white', marginBottom: '16px' }}>
+                  For Instructors: Build It Your Way
+                </h3>
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+                  <li style={{ display: 'flex', gap: '12px', marginBottom: '16px', alignItems: 'flex-start' }}>
+                    <CheckmarkIcon />
+                    <div>
+                      <strong style={{ display: 'block', color: 'white' }}>Upload Existing Task Sheets:</strong>
+                      <span style={{ color: 'rgba(255,255,255,0.85)' }}>Drop in your PDFs or Word docs and AI converts them instantly.</span>
+                    </div>
+                  </li>
+                  <li style={{ display: 'flex', gap: '12px', marginBottom: '16px', alignItems: 'flex-start' }}>
+                    <CheckmarkIcon />
+                    <div>
+                      <strong style={{ display: 'block', color: 'white' }}>Get AI Assistance:</strong>
+                      <span style={{ color: 'rgba(255,255,255,0.85)' }}>Describe what you want and let AI build the task sheet structure.</span>
+                    </div>
+                  </li>
+                  <li style={{ display: 'flex', gap: '12px', marginBottom: '16px', alignItems: 'flex-start' }}>
+                    <CheckmarkIcon />
+                    <div>
+                      <strong style={{ display: 'block', color: 'white' }}>Create from Scratch:</strong>
+                      <span style={{ color: 'rgba(255,255,255,0.85)' }}>Use our simple builder to design custom labs with smart forms and diagnostic challenges.</span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+              <div style={{ marginBottom: '32px' }}>
+                <h3 style={{ fontSize: '18px', fontWeight: 700, color: 'white', marginBottom: '16px' }}>
+                  Three Learning Modes
+                </h3>
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+                  <li style={{ display: 'flex', gap: '12px', marginBottom: '16px', alignItems: 'flex-start' }}>
+                    <CheckmarkIcon />
+                    <div>
+                      <strong style={{ display: 'block', color: 'white' }}>Live Shop:</strong>
+                      <span style={{ color: 'rgba(255,255,255,0.85)' }}>Students use AI-powered digital sheets while working on real vehicles.</span>
+                    </div>
+                  </li>
+                  <li style={{ display: 'flex', gap: '12px', marginBottom: '16px', alignItems: 'flex-start' }}>
+                    <CheckmarkIcon />
+                    <div>
+                      <strong style={{ display: 'block', color: 'white' }}>Virtual Scenarios:</strong>
+                      <span style={{ color: 'rgba(255,255,255,0.85)' }}>Practice diagnosis when vehicles aren't available.</span>
+                    </div>
+                  </li>
+                  <li style={{ display: 'flex', gap: '12px', marginBottom: '16px', alignItems: 'flex-start' }}>
+                    <CheckmarkIcon />
+                    <div>
+                      <strong style={{ display: 'block', color: 'white' }}>Virtual Diagnostic:</strong>
+                      <span style={{ color: 'rgba(255,255,255,0.85)' }}>Interactive conversations teach systematic troubleshooting.</span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+              <div style={{
+                background: 'rgba(255,255,255,0.15)',
+                padding: '24px',
+                borderRadius: '12px',
+                marginBottom: '32px',
+                borderLeft: '4px solid white'
+              }}>
+                <h4 style={{ fontSize: '16px', fontWeight: 700, color: 'white', marginBottom: '12px' }}>
+                  Why Teachers Love It
+                </h4>
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0, color: 'rgba(255,255,255,0.85)', fontSize: '15px', lineHeight: 1.6 }}>
+                  <li style={{ marginBottom: '8px' }}>✓ Turn existing materials into AI-enhanced labs in minutes</li>
+                  <li style={{ marginBottom: '8px' }}>✓ Students must document reasoning—can't just check boxes</li>
+                  <li style={{ marginBottom: '8px' }}>✓ Auto-graded with detailed feedback (saves hours)</li>
+                  <li style={{ marginBottom: '8px' }}>✓ Works on any device your students have</li>
+                  <li>✓ Unlimited practice scenarios without risking equipment</li>
+                </ul>
+              </div>
+
+              <button 
+                style={{
+                  background: 'white',
+                  color: '#8B5CF6',
+                  border: 'none',
+                  padding: '14px 32px',
+                  borderRadius: '8px',
+                  fontSize: '16px',
+                  fontWeight: 600,
+                  cursor: 'pointer',
+                  transition: 'all 0.3s'
+                }}
+                onMouseOver={(e) => {
+                  e.currentTarget.style.background = 'rgba(255,255,255,0.9)';
+                  e.currentTarget.style.transform = 'translateY(-2px)';
+                }}
+                onMouseOut={(e) => {
+                  e.currentTarget.style.background = 'white';
+                  e.currentTarget.style.transform = 'translateY(0)';
+                }}
+              >
+                Learn More
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Use Cases Section */}
       <section style={{ padding: '120px 0', background: 'var(--off-white)' }}>
         <div className="container">

@@ -563,6 +563,168 @@ const ProductsPage: React.FC<ProductsPageProps> = ({ navigateToPage }) => {
         </div>
       </section>
 
+      {/* LabReady Task Gallery Product */}
+      <section style={{ padding: '120px 0', background: 'linear-gradient(135deg, #06B6D4 0%, #3B82F6 100%)' }}>
+        <div className="container">
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: '1fr 1fr',
+            gap: '64px',
+            alignItems: 'center',
+            '@media (max-width: 1024px)': {
+              gridTemplateColumns: '1fr',
+              gap: '48px'
+            }
+          }}>
+            {/* Left - Carousel placeholder */}
+            <div>
+              <div style={{
+                borderRadius: '16px',
+                overflow: 'hidden',
+                background: 'white',
+                boxShadow: '0 20px 60px rgba(0,0,0,0.12)',
+                maxWidth: '280px',
+                margin: '0 auto',
+                aspectRatio: '4/3',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                color: 'var(--soft-gray)',
+                fontSize: '16px',
+                fontWeight: '600',
+                textAlign: 'center',
+                padding: '32px'
+              }}>
+                Images coming soon
+              </div>
+            </div>
+
+            {/* Right - Content */}
+            <div>
+              <div style={{ fontSize: '14px', fontWeight: 600, color: 'white', marginBottom: '12px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                Product
+              </div>
+              <h2 style={{ 
+                fontSize: '48px', 
+                fontWeight: 900, 
+                marginBottom: '24px', 
+                color: 'white', 
+                letterSpacing: '-1px',
+                lineHeight: 1.2
+              }}>
+                LabReady Task Gallery
+              </h2>
+              <p style={{ fontSize: '20px', color: 'white', lineHeight: 1.8, marginBottom: '32px' }}>
+                Transform Task Sheet Training with AI-Powered Engagement. Elevate your automotive technician training with interactive, AI-enhanced task sheets designed for educators and shops.
+              </p>
+
+              <div style={{ marginBottom: '32px' }}>
+                <h3 style={{ fontSize: '18px', fontWeight: 700, color: 'white', marginBottom: '16px' }}>
+                  Key Features
+                </h3>
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+                  <li style={{ display: 'flex', gap: '12px', marginBottom: '16px', alignItems: 'flex-start' }}>
+                    <CheckmarkIcon />
+                    <div>
+                      <strong style={{ display: 'block', color: 'white' }}>Interactive Task Sheet System:</strong>
+                      <span style={{ color: 'rgba(255,255,255,0.85)' }}>Convert traditional ASE task sheets into engaging, guided workflows.</span>
+                    </div>
+                  </li>
+                  <li style={{ display: 'flex', gap: '12px', marginBottom: '16px', alignItems: 'flex-start' }}>
+                    <CheckmarkIcon />
+                    <div>
+                      <strong style={{ display: 'block', color: 'white' }}>AI Mentoring Integration:</strong>
+                      <span style={{ color: 'rgba(255,255,255,0.85)' }}>Real-time feedback, diagnostic guidance, and personalized tips integrated directly into each task.</span>
+                    </div>
+                  </li>
+                  <li style={{ display: 'flex', gap: '12px', marginBottom: '16px', alignItems: 'flex-start' }}>
+                    <CheckmarkIcon />
+                    <div>
+                      <strong style={{ display: 'block', color: 'white' }}>Progress & Accountability:</strong>
+                      <span style={{ color: 'rgba(255,255,255,0.85)' }}>Track completion, monitor performance, and generate progress reports.</span>
+                    </div>
+                  </li>
+                  <li style={{ display: 'flex', gap: '12px', marginBottom: '16px', alignItems: 'flex-start' }}>
+                    <CheckmarkIcon />
+                    <div>
+                      <strong style={{ display: 'block', color: 'white' }}>Auto-Save Workflow:</strong>
+                      <span style={{ color: 'rgba(255,255,255,0.85)' }}>Technicians' work saves automatically, reducing data entry and ensuring nothing is lost.</span>
+                    </div>
+                  </li>
+                  <li style={{ display: 'flex', gap: '12px', marginBottom: '16px', alignItems: 'flex-start' }}>
+                    <CheckmarkIcon />
+                    <div>
+                      <strong style={{ display: 'block', color: 'white' }}>Diagnostic Challenges:</strong>
+                      <span style={{ color: 'rgba(255,255,255,0.85)' }}>Scenario-based challenges test understanding and reinforce key concepts.</span>
+                    </div>
+                  </li>
+                  <li style={{ display: 'flex', gap: '12px', marginBottom: '16px', alignItems: 'flex-start' }}>
+                    <CheckmarkIcon />
+                    <div>
+                      <strong style={{ display: 'block', color: 'white' }}>Performance Insights:</strong>
+                      <span style={{ color: 'rgba(255,255,255,0.85)' }}>Detailed analytics showing which technicians master concepts and where support is needed.</span>
+                    </div>
+                  </li>
+                  <li style={{ display: 'flex', gap: '12px', marginBottom: '16px', alignItems: 'flex-start' }}>
+                    <CheckmarkIcon />
+                    <div>
+                      <strong style={{ display: 'block', color: 'white' }}>Professional Task Library:</strong>
+                      <span style={{ color: 'rgba(255,255,255,0.85)' }}>30+ pre-built interactive task sheets covering safety, hazmat, compliance, and advanced systems.</span>
+                    </div>
+                  </li>
+                  <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                    <CheckmarkIcon />
+                    <div>
+                      <strong style={{ display: 'block', color: 'white' }}>On-Demand AI Support:</strong>
+                      <span style={{ color: 'rgba(255,255,255,0.85)' }}>Technicians access instant explanations without interrupting your instructional flow.</span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+              <div style={{
+                background: 'rgba(255,255,255,0.15)',
+                padding: '24px',
+                borderRadius: '12px',
+                marginBottom: '32px',
+                borderLeft: '4px solid white'
+              }}>
+                <h4 style={{ fontSize: '16px', fontWeight: 700, color: 'white', marginBottom: '12px' }}>
+                  Perfect For
+                </h4>
+                <p style={{ fontSize: '15px', color: 'rgba(255,255,255,0.85)', margin: 0, lineHeight: 1.6 }}>
+                  Technical schools, community colleges, independent shops, and corporate training programs using ASE standards.
+                </p>
+              </div>
+
+              <button 
+                style={{
+                  background: 'white',
+                  color: '#06B6D4',
+                  border: 'none',
+                  padding: '14px 32px',
+                  borderRadius: '8px',
+                  fontSize: '16px',
+                  fontWeight: 600,
+                  cursor: 'pointer',
+                  transition: 'all 0.3s'
+                }}
+                onMouseOver={(e) => {
+                  e.currentTarget.style.background = 'rgba(255,255,255,0.9)';
+                  e.currentTarget.style.transform = 'translateY(-2px)';
+                }}
+                onMouseOut={(e) => {
+                  e.currentTarget.style.background = 'white';
+                  e.currentTarget.style.transform = 'translateY(0)';
+                }}
+              >
+                Learn More
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Use Cases Section */}
       <section style={{ padding: '120px 0', background: 'var(--off-white)' }}>
         <div className="container">

@@ -287,9 +287,29 @@ const HomePage: React.FC<HomePageProps> = ({ navigateToPage }) => {
             {/* Origin Story */}
             <div style={{ marginBottom: '48px' }}>
               <h4 style={{ fontSize: '24px', fontWeight: 700, marginBottom: '16px', color: 'var(--charcoal)' }}>Our Story</h4>
-              <p style={{ fontSize: '17px', lineHeight: 1.8, color: 'var(--soft-gray)', maxWidth: '800px' }}>
-                We saw a critical gap: automotive education lagged behind the technology transforming the industry. Technicians and educators needed cutting-edge tools to bridge real-world diagnostics with classroom learning, but solutions were fragmented and outdated. ElevatED was born to modernize technical training through AI-powered tools that empower instructors and engage students—making training faster, clearer, and more effective.
-              </p>
+              
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '32px', alignItems: 'center', marginBottom: '24px' }}>
+                <div>
+                  <p style={{ fontSize: '17px', lineHeight: 1.8, color: 'var(--soft-gray)' }}>
+                    We saw a critical gap: automotive education lagged behind the technology transforming the industry. Technicians and educators needed cutting-edge tools to bridge real-world diagnostics with classroom learning, but solutions were fragmented and outdated. ElevatED was born to modernize technical training through AI-powered tools that empower instructors and engage students—making training faster, clearer, and more effective.
+                  </p>
+                </div>
+                <div style={{
+                  borderRadius: '12px',
+                  overflow: 'hidden',
+                  boxShadow: '0 12px 32px rgba(0,0,0,0.1)'
+                }}>
+                  <img 
+                    src="/Our Story.webp" 
+                    alt="ElevatED Automotive Solutions - Our Story"
+                    style={{
+                      width: '100%',
+                      height: 'auto',
+                      display: 'block'
+                    }}
+                  />
+                </div>
+              </div>
             </div>
 
             {/* Company Overview */}

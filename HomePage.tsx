@@ -460,6 +460,7 @@ const HomePage: React.FC<HomePageProps> = ({ navigateToPage }) => {
               e.currentTarget.style.transform = 'translateY(0)';
               e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.08)';
             }}
+            onClick={() => navigateToPage('blog')}
             >
               <div style={{
                 height: '200px',
@@ -469,9 +470,10 @@ const HomePage: React.FC<HomePageProps> = ({ navigateToPage }) => {
                 justifyContent: 'center',
                 fontSize: '60px',
                 color: 'white',
-                fontWeight: 700
+                fontWeight: 700,
+                overflow: 'hidden'
               }}>
-                🎮
+                <img src="/How Gamified Learning.webp" alt="Gamified Learning" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
               
               <div style={{ padding: '24px' }}>
@@ -482,12 +484,130 @@ const HomePage: React.FC<HomePageProps> = ({ navigateToPage }) => {
                   How Gamified Learning Increases Student Engagement
                 </h4>
                 <p style={{ fontSize: '14px', color: 'var(--soft-gray)', lineHeight: 1.6, marginBottom: '16px' }}>
-                  Discover how the ElevatED AI Trivia Professor transforms passive learning into an interactive experience that keeps students engaged and improves retention rates.
+                  Discover how interactive, game-based learning transforms passive students into engaged learners who actually care about getting it right.
                 </p>
                 
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '16px', paddingTop: '16px', borderTop: '1px solid rgba(59, 130, 246, 0.1)' }}>
                   <span style={{ fontSize: '12px', color: 'var(--steel-gray)' }}>Jan 20, 2026</span>
-                  <a href="#" onClick={(e) => e.preventDefault()} style={{
+                  <a href="#" onClick={(e) => { e.preventDefault(); navigateToPage('blog'); }} style={{
+                    color: 'var(--primary-blue)',
+                    textDecoration: 'none',
+                    fontWeight: 600,
+                    fontSize: '14px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '4px'
+                  }}>
+                    Read More <span style={{ fontSize: '12px' }}>→</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            {/* Blog Post Card 2 */}
+            <article style={{
+              borderRadius: '16px',
+              overflow: 'hidden',
+              background: 'white',
+              border: '2px solid rgba(59, 130, 246, 0.1)',
+              boxShadow: '0 4px 12px rgba(0,0,0,0.08)',
+              transition: 'transform 0.3s, box-shadow 0.3s',
+              cursor: 'pointer'
+            }}
+            onMouseOver={(e) => {
+              e.currentTarget.style.transform = 'translateY(-4px)';
+              e.currentTarget.style.boxShadow = '0 8px 24px rgba(59, 130, 246, 0.15)';
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.style.transform = 'translateY(0)';
+              e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.08)';
+            }}
+            onClick={() => navigateToPage('blog')}
+            >
+              <div style={{
+                height: '200px',
+                background: 'linear-gradient(135deg, #3B82F6, #06B6D4)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                overflow: 'hidden'
+              }}>
+                <img src="/Expanding the Pathway.webp" alt="Expanding the Pathway" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              </div>
+              
+              <div style={{ padding: '24px' }}>
+                <div style={{ fontSize: '12px', fontWeight: 600, color: 'var(--primary-blue)', marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                  Industry Insights
+                </div>
+                <h4 style={{ fontSize: '20px', fontWeight: 700, margin: '8px 0 12px', color: 'var(--charcoal)' }}>
+                  Expanding the Pathway: Traditional Training + Flexible Learning
+                </h4>
+                <p style={{ fontSize: '14px', color: 'var(--soft-gray)', lineHeight: 1.6, marginBottom: '16px' }}>
+                  Why both traditional apprenticeships and flexible learning options matter for the future of automotive education.
+                </p>
+                
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '16px', paddingTop: '16px', borderTop: '1px solid rgba(59, 130, 246, 0.1)' }}>
+                  <span style={{ fontSize: '12px', color: 'var(--steel-gray)' }}>Jan 20, 2026</span>
+                  <a href="#" onClick={(e) => { e.preventDefault(); navigateToPage('blog'); }} style={{
+                    color: 'var(--primary-blue)',
+                    textDecoration: 'none',
+                    fontWeight: 600,
+                    fontSize: '14px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '4px'
+                  }}>
+                    Read More <span style={{ fontSize: '12px' }}>→</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            {/* Blog Post Card 3 */}
+            <article style={{
+              borderRadius: '16px',
+              overflow: 'hidden',
+              background: 'white',
+              border: '2px solid rgba(59, 130, 246, 0.1)',
+              boxShadow: '0 4px 12px rgba(0,0,0,0.08)',
+              transition: 'transform 0.3s, box-shadow 0.3s',
+              cursor: 'pointer'
+            }}
+            onMouseOver={(e) => {
+              e.currentTarget.style.transform = 'translateY(-4px)';
+              e.currentTarget.style.boxShadow = '0 8px 24px rgba(59, 130, 246, 0.15)';
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.style.transform = 'translateY(0)';
+              e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.08)';
+            }}
+            onClick={() => navigateToPage('blog')}
+            >
+              <div style={{
+                height: '200px',
+                background: 'linear-gradient(135deg, #3B82F6, #06B6D4)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                overflow: 'hidden'
+              }}>
+                <img src="/From Technician to Educator.webp" alt="From Technician to Educator" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              </div>
+              
+              <div style={{ padding: '24px' }}>
+                <div style={{ fontSize: '12px', fontWeight: 600, color: 'var(--primary-blue)', marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                  Education
+                </div>
+                <h4 style={{ fontSize: '20px', fontWeight: 700, margin: '8px 0 12px', color: 'var(--charcoal)' }}>
+                  From Technician to Educator: Why Skilled Instructors Need Better Tools
+                </h4>
+                <p style={{ fontSize: '14px', color: 'var(--soft-gray)', lineHeight: 1.6, marginBottom: '16px' }}>
+                  The transition from master technician to classroom instructor is harder than it looks. Here's why educators deserve better support.
+                </p>
+                
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '16px', paddingTop: '16px', borderTop: '1px solid rgba(59, 130, 246, 0.1)' }}>
+                  <span style={{ fontSize: '12px', color: 'var(--steel-gray)' }}>Jan 20, 2026</span>
+                  <a href="#" onClick={(e) => { e.preventDefault(); navigateToPage('blog'); }} style={{
                     color: 'var(--primary-blue)',
                     textDecoration: 'none',
                     fontWeight: 600,
@@ -504,7 +624,7 @@ const HomePage: React.FC<HomePageProps> = ({ navigateToPage }) => {
           </div>
           
           <div style={{ textAlign: 'center' }}>
-            <a href="#" onClick={(e) => e.preventDefault()} style={{
+            <a href="#" onClick={(e) => { e.preventDefault(); navigateToPage('blog'); }} style={{
               display: 'inline-flex',
               alignItems: 'center',
               gap: '8px',

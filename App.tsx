@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import HomePage from './HomePage';
 import TriviaPage from './TriviaPage';
+import BlogPage from './BlogPage';
+import ProductsPage from './ProductsPage';
 
 interface TriviaPageProps {
   navigateToPage: (page: string) => void;
@@ -52,8 +54,8 @@ const App: React.FC = () => {
               <h1 aria-label="ElevatED Automotive Solutions">ElevatED Automotive Solutions</h1>
             </a>
             <nav className="menu" aria-label="Primary">
-              <a href="#" onClick={(e) => { e.preventDefault(); navigateToPage('workforce'); }}>Workforce Training</a>
-              <a href="#" onClick={(e) => { e.preventDefault(); navigateToPage('education'); }}>Educational Institutions</a>
+              <a href="#" onClick={(e) => { e.preventDefault(); navigateToPage('products'); }}>Products</a>
+              <a href="#" onClick={(e) => { e.preventDefault(); navigateToPage('blog'); }}>Blog</a>
               <a href="#about" onClick={(e) => { e.preventDefault(); navigateToHomeAndScroll('#about'); }}>About</a>
               <a href="mailto:info@elevatedautosolutions.com">Contact</a>
             </nav>
@@ -63,6 +65,8 @@ const App: React.FC = () => {
 
       {currentPage === 'home' && <HomePage navigateToPage={navigateToPage} />}
       {currentPage === 'trivia' && <TriviaPage navigateToPage={navigateToPage} />}
+      {currentPage === 'blog' && <BlogPage navigateToPage={navigateToPage} />}
+      {currentPage === 'products' && <ProductsPage navigateToPage={navigateToPage} />}
 
       {currentPage !== 'trivia' && (
         <footer>

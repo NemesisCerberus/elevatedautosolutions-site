@@ -5,7 +5,8 @@ interface ProductsPageProps {
 }
 
 const ProductsPage: React.FC<ProductsPageProps> = ({ navigateToPage }) => {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [currentTriviaImageIndex, setCurrentTriviaImageIndex] = useState(0);
+  const [currentShopReadyImageIndex, setCurrentShopReadyImageIndex] = useState(0);
   
   const triviaImages = [
     { src: '/Trivia Gameplay 1.png', alt: 'Game board selection' },
@@ -17,12 +18,34 @@ const ProductsPage: React.FC<ProductsPageProps> = ({ navigateToPage }) => {
     { src: '/Trivia Gameplay 7.png', alt: 'Results summary' },
   ];
 
-  const nextImage = () => {
-    setCurrentImageIndex((prev) => (prev + 1) % triviaImages.length);
+  const shopReadyImages = [
+    { src: '/ShopReady/ShopReady1.webp', alt: 'ShopReady interface 1' },
+    { src: '/ShopReady/ShopReady2.webp', alt: 'ShopReady interface 2' },
+    { src: '/ShopReady/ShopReady3.webp', alt: 'ShopReady interface 3' },
+    { src: '/ShopReady/ShopReady4.webp', alt: 'ShopReady interface 4' },
+    { src: '/ShopReady/ShopReady5.webp', alt: 'ShopReady interface 5' },
+    { src: '/ShopReady/ShopReady6.webp', alt: 'ShopReady interface 6' },
+    { src: '/ShopReady/ShopReady7.webp', alt: 'ShopReady interface 7' },
+    { src: '/ShopReady/ShopReady8.webp', alt: 'ShopReady interface 8' },
+    { src: '/ShopReady/ShopReady9.webp', alt: 'ShopReady interface 9' },
+    { src: '/ShopReady/ShopReady10.webp', alt: 'ShopReady interface 10' },
+    { src: '/ShopReady/ShopReady11.webp', alt: 'ShopReady interface 11' },
+  ];
+
+  const nextTriviaImage = () => {
+    setCurrentTriviaImageIndex((prev) => (prev + 1) % triviaImages.length);
   };
 
-  const prevImage = () => {
-    setCurrentImageIndex((prev) => (prev - 1 + triviaImages.length) % triviaImages.length);
+  const prevTriviaImage = () => {
+    setCurrentTriviaImageIndex((prev) => (prev - 1 + triviaImages.length) % triviaImages.length);
+  };
+
+  const nextShopReadyImage = () => {
+    setCurrentShopReadyImageIndex((prev) => (prev + 1) % shopReadyImages.length);
+  };
+
+  const prevShopReadyImage = () => {
+    setCurrentShopReadyImageIndex((prev) => (prev - 1 + shopReadyImages.length) % shopReadyImages.length);
   };
 
   const CheckmarkIcon = () => (
@@ -215,8 +238,8 @@ const ProductsPage: React.FC<ProductsPageProps> = ({ navigateToPage }) => {
                 margin: '0 auto'
               }}>
                 <img 
-                  src={triviaImages[currentImageIndex].src} 
-                  alt={triviaImages[currentImageIndex].alt}
+                  src={triviaImages[currentTriviaImageIndex].src} 
+                  alt={triviaImages[currentTriviaImageIndex].alt}
                   style={{
                     width: '100%',
                     height: 'auto',
@@ -233,7 +256,7 @@ const ProductsPage: React.FC<ProductsPageProps> = ({ navigateToPage }) => {
                 marginTop: '20px'
               }}>
                 <button
-                  onClick={prevImage}
+                  onClick={prevTriviaImage}
                   style={{
                     background: 'var(--primary-blue)',
                     color: 'white',
@@ -268,12 +291,12 @@ const ProductsPage: React.FC<ProductsPageProps> = ({ navigateToPage }) => {
                   {triviaImages.map((_, index) => (
                     <div
                       key={index}
-                      onClick={() => setCurrentImageIndex(index)}
+                      onClick={() => setCurrentTriviaImageIndex(index)}
                       style={{
-                        width: currentImageIndex === index ? '24px' : '8px',
+                        width: currentTriviaImageIndex === index ? '24px' : '8px',
                         height: '8px',
                         borderRadius: '4px',
-                        background: currentImageIndex === index ? 'var(--primary-blue)' : 'rgba(59, 130, 246, 0.3)',
+                        background: currentTriviaImageIndex === index ? 'var(--primary-blue)' : 'rgba(59, 130, 246, 0.3)',
                         cursor: 'pointer',
                         transition: 'all 0.3s'
                       }}
@@ -282,7 +305,7 @@ const ProductsPage: React.FC<ProductsPageProps> = ({ navigateToPage }) => {
                 </div>
 
                 <button
-                  onClick={nextImage}
+                  onClick={nextTriviaImage}
                   style={{
                     background: 'var(--primary-blue)',
                     color: 'white',
@@ -314,8 +337,233 @@ const ProductsPage: React.FC<ProductsPageProps> = ({ navigateToPage }) => {
         </div>
       </section>
 
-      {/* Use Cases Section */}
+      {/* ShopReady Learning Platform Product */}
       <section style={{ padding: '120px 0', background: '#FFFFFF' }}>
+        <div className="container">
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: '1fr 1fr',
+            gap: '64px',
+            alignItems: 'center',
+            '@media (max-width: 1024px)': {
+              gridTemplateColumns: '1fr',
+              gap: '48px'
+            }
+          }}>
+            {/* Right - Carousel (images will be added here) */}
+            <div style={{ order: 2 }}>
+              <div style={{
+                borderRadius: '16px',
+                overflow: 'hidden',
+                background: 'white',
+                boxShadow: '0 20px 60px rgba(0,0,0,0.12)',
+                maxWidth: '400px',
+                margin: '0 auto'
+              }}>
+                <img 
+                  src={shopReadyImages[currentShopReadyImageIndex].src} 
+                  alt={shopReadyImages[currentShopReadyImageIndex].alt}
+                  style={{
+                    width: '100%',
+                    height: 'auto',
+                    display: 'block'
+                  }}
+                />
+              </div>
+
+              {/* Carousel Controls */}
+              <div style={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                marginTop: '20px'
+              }}>
+                <button
+                  onClick={prevShopReadyImage}
+                  style={{
+                    background: 'var(--primary-blue)',
+                    color: 'white',
+                    border: 'none',
+                    width: '44px',
+                    height: '44px',
+                    borderRadius: '50%',
+                    cursor: 'pointer',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontSize: '20px',
+                    transition: 'all 0.3s'
+                  }}
+                  onMouseOver={(e) => {
+                    e.currentTarget.style.background = '#2563EB';
+                    e.currentTarget.style.transform = 'scale(1.1)';
+                  }}
+                  onMouseOut={(e) => {
+                    e.currentTarget.style.background = 'var(--primary-blue)';
+                    e.currentTarget.style.transform = 'scale(1)';
+                  }}
+                >
+                  ←
+                </button>
+
+                <div style={{
+                  display: 'flex',
+                  gap: '8px',
+                  justifyContent: 'center'
+                }}>
+                  {shopReadyImages.map((_, index) => (
+                    <div
+                      key={index}
+                      onClick={() => setCurrentShopReadyImageIndex(index)}
+                      style={{
+                        width: currentShopReadyImageIndex === index ? '24px' : '8px',
+                        height: '8px',
+                        borderRadius: '4px',
+                        background: currentShopReadyImageIndex === index ? 'var(--primary-blue)' : 'rgba(59, 130, 246, 0.3)',
+                        cursor: 'pointer',
+                        transition: 'all 0.3s'
+                      }}
+                    />
+                  ))}
+                </div>
+
+                <button
+                  onClick={nextShopReadyImage}
+                  style={{
+                    background: 'var(--primary-blue)',
+                    color: 'white',
+                    border: 'none',
+                    width: '44px',
+                    height: '44px',
+                    borderRadius: '50%',
+                    cursor: 'pointer',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontSize: '20px',
+                    transition: 'all 0.3s'
+                  }}
+                  onMouseOver={(e) => {
+                    e.currentTarget.style.background = '#2563EB';
+                    e.currentTarget.style.transform = 'scale(1.1)';
+                  }}
+                  onMouseOut={(e) => {
+                    e.currentTarget.style.background = 'var(--primary-blue)';
+                    e.currentTarget.style.transform = 'scale(1)';
+                  }}
+                >
+                  →
+                </button>
+              </div>
+            </div>
+
+            {/* Left - Content */}
+            <div style={{ order: 1 }}>
+              <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--primary-blue)', marginBottom: '12px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                Product
+              </div>
+              <h2 style={{ 
+                fontSize: '48px', 
+                fontWeight: 900, 
+                marginBottom: '24px', 
+                color: 'var(--charcoal)', 
+                letterSpacing: '-1px',
+                lineHeight: 1.2
+              }}>
+                ShopReady Learning Platform
+              </h2>
+              <p style={{ fontSize: '20px', color: 'var(--soft-gray)', lineHeight: 1.8, marginBottom: '32px' }}>
+                Master Automotive Technology with AI-Powered Training. Comprehensive, bite-sized lessons and intelligent mentoring for technicians at every level.
+              </p>
+
+              <div style={{ marginBottom: '32px' }}>
+                <h3 style={{ fontSize: '18px', fontWeight: 700, color: 'var(--charcoal)', marginBottom: '16px' }}>
+                  Key Features
+                </h3>
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+                  <li style={{ display: 'flex', gap: '12px', marginBottom: '16px', alignItems: 'flex-start' }}>
+                    <CheckmarkIcon />
+                    <div>
+                      <strong style={{ display: 'block', color: 'var(--charcoal)' }}>AI-Powered R.A.C.E. Mentor:</strong>
+                      <span style={{ color: 'var(--soft-gray)' }}>24/7 personalized help for every question and challenge.</span>
+                    </div>
+                  </li>
+                  <li style={{ display: 'flex', gap: '12px', marginBottom: '16px', alignItems: 'flex-start' }}>
+                    <CheckmarkIcon />
+                    <div>
+                      <strong style={{ display: 'block', color: 'var(--charcoal)' }}>1,000+ Bite-Sized Lessons:</strong>
+                      <span style={{ color: 'var(--soft-gray)' }}>690+ technical ASE topics + 376+ essential soft skills.</span>
+                    </div>
+                  </li>
+                  <li style={{ display: 'flex', gap: '12px', marginBottom: '16px', alignItems: 'flex-start' }}>
+                    <CheckmarkIcon />
+                    <div>
+                      <strong style={{ display: 'block', color: 'var(--charcoal)' }}>Comprehensive ASE Coverage:</strong>
+                      <span style={{ color: 'var(--soft-gray)' }}>Engine repair, diagnostics, transmissions, brakes, and ADAS.</span>
+                    </div>
+                  </li>
+                  <li style={{ display: 'flex', gap: '12px', marginBottom: '16px', alignItems: 'flex-start' }}>
+                    <CheckmarkIcon />
+                    <div>
+                      <strong style={{ display: 'block', color: 'var(--charcoal)' }}>Mobile-Optimized & Accessible:</strong>
+                      <span style={{ color: 'var(--soft-gray)' }}>Learn anywhere with voice accessibility and progress tracking.</span>
+                    </div>
+                  </li>
+                  <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                    <CheckmarkIcon />
+                    <div>
+                      <strong style={{ display: 'block', color: 'var(--charcoal)' }}>Personalized Learning Paths:</strong>
+                      <span style={{ color: 'var(--soft-gray)' }}>Streak rewards, achievement milestones, and adaptive progression.</span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+              <div style={{
+                background: 'var(--off-white)',
+                padding: '24px',
+                borderRadius: '12px',
+                marginBottom: '32px',
+                borderLeft: '4px solid var(--primary-blue)'
+              }}>
+                <h4 style={{ fontSize: '16px', fontWeight: 700, color: 'var(--charcoal)', marginBottom: '12px' }}>
+                  Perfect For
+                </h4>
+                <p style={{ fontSize: '15px', color: 'var(--soft-gray)', margin: 0, lineHeight: 1.6 }}>
+                  Individual technicians seeking continuous learning, vocational students mastering core ASE competencies, educational institutions and training programs, and working professionals advancing their careers.
+                </p>
+              </div>
+
+              <button 
+                style={{
+                  background: 'var(--primary-blue)',
+                  color: 'white',
+                  border: 'none',
+                  padding: '14px 32px',
+                  borderRadius: '8px',
+                  fontSize: '16px',
+                  fontWeight: 600,
+                  cursor: 'pointer',
+                  transition: 'all 0.3s'
+                }}
+                onMouseOver={(e) => {
+                  e.currentTarget.style.background = '#2563EB';
+                  e.currentTarget.style.transform = 'translateY(-2px)';
+                }}
+                onMouseOut={(e) => {
+                  e.currentTarget.style.background = 'var(--primary-blue)';
+                  e.currentTarget.style.transform = 'translateY(0)';
+                }}
+              >
+                Learn More
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Use Cases Section */}
+      <section style={{ padding: '120px 0', background: 'var(--off-white)' }}>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '64px' }}>
             <h2 style={{ 
@@ -325,7 +573,7 @@ const ProductsPage: React.FC<ProductsPageProps> = ({ navigateToPage }) => {
               color: 'var(--charcoal)',
               letterSpacing: '-1px'
             }}>
-              Perfect For
+              Use Cases
             </h2>
             <p style={{ 
               fontSize: '18px', 

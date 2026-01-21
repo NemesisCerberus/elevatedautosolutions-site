@@ -718,6 +718,22 @@
       }
     }
     
+    /* Our Story Grid - responsive */
+    .our-story-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+    
+    @media (max-width: 768px) {
+      .our-story-grid {
+        grid-template-columns: 1fr !important;
+      }
+      
+      .our-story-grid > div:last-child {
+        order: -1;
+        margin-bottom: 16px;
+      }
+    }
+    
     /* Footer */
     footer {
       padding: 64px 0 80px;

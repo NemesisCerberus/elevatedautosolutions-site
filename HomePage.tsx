@@ -140,7 +140,7 @@ const HomePage: React.FC<HomePageProps> = ({ navigateToPage }) => {
             <div style={{ marginBottom: '48px' }}>
               <h4 style={{ fontSize: '24px', fontWeight: 700, marginBottom: '16px', color: 'var(--charcoal)' }}>Our Story</h4>
               
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '32px', alignItems: 'center', marginBottom: '24px' }}>
+              <div className="our-story-grid" style={{ display: 'grid', gap: '32px', alignItems: 'center', marginBottom: '24px' }}>
                 <div>
                   <p style={{ fontSize: '17px', lineHeight: 1.8, color: 'var(--soft-gray)' }}>
                     We saw a critical gap: automotive education lagged behind the technology transforming the industry. Technicians and educators needed cutting-edge tools to bridge real-world diagnostics with classroom learning, but solutions were fragmented and outdated. ElevatED was born to modernize technical training through AI-powered tools that empower instructors and engage students—making training faster, clearer, and more effective.

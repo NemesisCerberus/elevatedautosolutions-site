@@ -242,34 +242,15 @@ const ProductsPage: React.FC<ProductsPageProps> = ({ navigateToPage }) => {
               {/* Carousel Controls */}
               <div style={{
                 display: 'flex',
-                justifyContent: 'space-between',
+                justifyContent: 'center',
                 alignItems: 'center',
+                gap: '16px',
                 marginTop: '20px'
               }}>
                 <button
                   onClick={prevTriviaImage}
-                  style={{
-                    background: 'var(--primary-blue)',
-                    color: 'white',
-                    border: 'none',
-                    width: '44px',
-                    height: '44px',
-                    borderRadius: '50%',
-                    cursor: 'pointer',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    fontSize: '20px',
-                    transition: 'all 0.3s'
-                  }}
-                  onMouseOver={(e) => {
-                    e.currentTarget.style.background = '#2563EB';
-                    e.currentTarget.style.transform = 'scale(1.1)';
-                  }}
-                  onMouseOut={(e) => {
-                    e.currentTarget.style.background = 'var(--primary-blue)';
-                    e.currentTarget.style.transform = 'scale(1)';
-                  }}
+                  className="carousel-btn"
+                  aria-label="Previous image"
                 >
                   ←
                 </button>
@@ -297,28 +278,8 @@ const ProductsPage: React.FC<ProductsPageProps> = ({ navigateToPage }) => {
 
                 <button
                   onClick={nextTriviaImage}
-                  style={{
-                    background: 'var(--primary-blue)',
-                    color: 'white',
-                    border: 'none',
-                    width: '44px',
-                    height: '44px',
-                    borderRadius: '50%',
-                    cursor: 'pointer',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    fontSize: '20px',
-                    transition: 'all 0.3s'
-                  }}
-                  onMouseOver={(e) => {
-                    e.currentTarget.style.background = '#2563EB';
-                    e.currentTarget.style.transform = 'scale(1.1)';
-                  }}
-                  onMouseOut={(e) => {
-                    e.currentTarget.style.background = 'var(--primary-blue)';
-                    e.currentTarget.style.transform = 'scale(1)';
-                  }}
+                  className="carousel-btn"
+                  aria-label="Next image"
                 >
                   →
                 </button>
@@ -356,34 +317,15 @@ const ProductsPage: React.FC<ProductsPageProps> = ({ navigateToPage }) => {
               {/* Carousel Controls */}
               <div style={{
                 display: 'flex',
-                justifyContent: 'space-between',
+                justifyContent: 'center',
                 alignItems: 'center',
+                gap: '16px',
                 marginTop: '20px'
               }}>
                 <button
                   onClick={prevShopReadyImage}
-                  style={{
-                    background: 'var(--primary-blue)',
-                    color: 'white',
-                    border: 'none',
-                    width: '44px',
-                    height: '44px',
-                    borderRadius: '50%',
-                    cursor: 'pointer',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    fontSize: '20px',
-                    transition: 'all 0.3s'
-                  }}
-                  onMouseOver={(e) => {
-                    e.currentTarget.style.background = '#2563EB';
-                    e.currentTarget.style.transform = 'scale(1.1)';
-                  }}
-                  onMouseOut={(e) => {
-                    e.currentTarget.style.background = 'var(--primary-blue)';
-                    e.currentTarget.style.transform = 'scale(1)';
-                  }}
+                  className="carousel-btn"
+                  aria-label="Previous image"
                 >
                   ←
                 </button>
@@ -411,28 +353,8 @@ const ProductsPage: React.FC<ProductsPageProps> = ({ navigateToPage }) => {
 
                 <button
                   onClick={nextShopReadyImage}
-                  style={{
-                    background: 'var(--primary-blue)',
-                    color: 'white',
-                    border: 'none',
-                    width: '44px',
-                    height: '44px',
-                    borderRadius: '50%',
-                    cursor: 'pointer',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    fontSize: '20px',
-                    transition: 'all 0.3s'
-                  }}
-                  onMouseOver={(e) => {
-                    e.currentTarget.style.background = '#2563EB';
-                    e.currentTarget.style.transform = 'scale(1.1)';
-                  }}
-                  onMouseOut={(e) => {
-                    e.currentTarget.style.background = 'var(--primary-blue)';
-                    e.currentTarget.style.transform = 'scale(1)';
-                  }}
+                  className="carousel-btn"
+                  aria-label="Next image"
                 >
                   →
                 </button>

@@ -55,6 +55,7 @@ const App: React.FC = () => {
             <a href="#" onClick={(e) => { e.preventDefault(); navigateToPage('home'); }} className="brand" style={{ cursor: 'pointer' }}>
               <img src={logoSrc} alt="ElevatED Automotive Solutions logo" className="brand-logo" />
               <h1 aria-label="ElevatED Automotive Solutions">ElevatED Automotive Solutions</h1>
+            </a>
             <button 
               className="hamburger"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}

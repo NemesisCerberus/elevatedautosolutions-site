@@ -97,16 +97,7 @@ const ProductsPage: React.FC<ProductsPageProps> = ({ navigateToPage }) => {
       {/* ElevatED AI Trivia Professor Product */}
       <section style={{ padding: '120px 0', background: 'linear-gradient(0deg, #FFFFFF, var(--off-white))' }}>
         <div className="container">
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: '1fr 1fr',
-            gap: '64px',
-            alignItems: 'center',
-            '@media (max-width: 1024px)': {
-              gridTemplateColumns: '1fr',
-              gap: '48px'
-            }
-          }}>
+          <div className="product-grid">
             {/* Left - Content */}
             <div>
               <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--primary-blue)', marginBottom: '12px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
@@ -340,17 +331,7 @@ const ProductsPage: React.FC<ProductsPageProps> = ({ navigateToPage }) => {
       {/* ShopReady Learning Platform Product */}
       <section style={{ padding: '120px 0', background: 'linear-gradient(135deg, #3B82F6 0%, #06B6D4 100%)' }}>
         <div className="container">
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: '1fr 1fr',
-            gap: '64px',
-            alignItems: 'center',
-            background: '#e8f4ff !important',
-            '@media (max-width: 1024px)': {
-              gridTemplateColumns: '1fr',
-              gap: '48px'
-            }
-          }}>
+          <div className="product-grid">
             {/* Right - Carousel (images will be added here) */}
             <div style={{ order: 2 }}>
               <div style={{
@@ -576,16 +557,7 @@ const ProductsPage: React.FC<ProductsPageProps> = ({ navigateToPage }) => {
               gap: '48px'
             }
           }}>
-            {/* Left - Carousel placeholder */}
-            <div>
-              <div style={{
-                borderRadius: '16px',
-                overflow: 'hidden',
-                background: 'white',
-                boxShadow: '0 20px 60px rgba(0,0,0,0.12)',
-                maxWidth: '280px',
-                margin: '0 auto',
-                aspectRatio: '4/3',
+            {/*className="product-grid"    aspectRatio: '4/3',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -737,16 +709,7 @@ const ProductsPage: React.FC<ProductsPageProps> = ({ navigateToPage }) => {
               gridTemplateColumns: '1fr',
               gap: '48px'
             }
-          }}>
-            {/* Left - Carousel placeholder */}
-            <div>
-              <div style={{
-                borderRadius: '16px',
-                overflow: 'hidden',
-                background: 'white',
-                boxShadow: '0 20px 60px rgba(0,0,0,0.12)',
-                maxWidth: '280px',
-                margin: '0 auto',
+          }}>className="product-grid"    margin: '0 auto',
                 aspectRatio: '4/3',
                 display: 'flex',
                 alignItems: 'center',

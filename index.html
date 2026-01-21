@@ -723,6 +723,14 @@
       grid-template-columns: 1fr 1fr;
     }
     
+    /* Product Grid - responsive */
+    .product-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    
     @media (max-width: 768px) {
       .our-story-grid {
         grid-template-columns: 1fr !important;
@@ -731,6 +739,19 @@
       .our-story-grid > div:last-child {
         order: -1;
         margin-bottom: 16px;
+      }
+      
+      .product-grid {
+        grid-template-columns: 1fr !important;
+        gap: 32px !important;
+      }
+      
+      .product-grid > div {
+        order: 0 !important;
+      }
+      
+      .product-grid > div:first-child {
+        order: 1 !important;
       }
     }
     

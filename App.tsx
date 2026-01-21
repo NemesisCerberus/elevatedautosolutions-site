@@ -25,8 +25,8 @@ const App: React.FC = () => {
     window.scrollTo(0, 0);
   };
 
-  cosetMobileMenuOpen(false);
-    nst navigateToHomeAndScroll = (hash: string) => {
+  const navigateToHomeAndScroll = (hash: string) => {
+    setMobileMenuOpen(false);
     if (currentPage !== 'home') {
       setCurrentPage('home');
       // Wait for HomePage to render before scrolling

@@ -60,37 +60,10 @@ const App: React.FC = () => {
               className="hamburger"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label="Toggle mobile menu"
-              style={{
-                background: 'none',
-                border: 'none',
-                cursor: 'pointer',
-                padding: '8px',
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '5px'
-              }}
             >
-              <span style={{
-                width: '24px',
-                height: '2px',
-                backgroundColor: 'var(--charcoal)',
-                transition: 'all 0.3s ease',
-                transform: mobileMenuOpen ? 'rotate(45deg) translateY(11px)' : 'none'
-              }} />
-              <span style={{
-                width: '24px',
-                height: '2px',
-                backgroundColor: 'var(--charcoal)',
-                opacity: mobileMenuOpen ? 0 : 1,
-                transition: 'opacity 0.3s ease'
-              }} />
-              <span style={{
-                width: '24px',
-                height: '2px',
-                backgroundColor: 'var(--charcoal)',
-                transition: 'all 0.3s ease',
-                transform: mobileMenuOpen ? 'rotate(-45deg) translateY(-11px)' : 'none'
-              }} />
+              <span className={mobileMenuOpen ? 'open' : ''} />
+              <span className={mobileMenuOpen ? 'open' : ''} />
+              <span className={mobileMenuOpen ? 'open' : ''} />
             </button>
             <nav 
               className={`menu ${mobileMenuOpen ? 'active' : ''}`}

@@ -57,7 +57,7 @@ const ProductsPage: React.FC<ProductsPageProps> = ({ navigateToPage }) => {
   return (
     <main style={{ minHeight: '100vh' }}>
       {/* Hero Section */}
-      <section style={{ padding: '120px 0 80px', background: 'linear-gradient(135deg, #3B82F6 0%, #06B6D4 100%)' }}>
+      <section style={{ padding: 'clamp(60px, 15vw, 120px) 0 clamp(60px, 12vw, 80px)', background: 'linear-gradient(135deg, #3B82F6 0%, #06B6D4 100%)' }}>
         <div className="container">
           <div style={{ maxWidth: '800px' }}>
             <span style={{ 

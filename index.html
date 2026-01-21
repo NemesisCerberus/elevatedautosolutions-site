@@ -682,6 +682,55 @@
       opacity: 0.15;
       pointer-events: none;
     }
+
+    /* Mobile Optimizations */
+    @media (max-width: 768px) {
+      .container { padding: 0 16px; }
+      
+      body { font-size: 15px; }
+      
+      h1 { font-size: 32px !important; }
+      h2 { font-size: 28px !important; }
+      h3 { font-size: 20px !important; }
+      h4 { font-size: 16px !important; }
+      
+      .menu { gap: 24px; font-size: 14px; }
+      
+      section { padding: 60px 0 !important; }
+      
+      .btn, button { padding: 12px 24px !important; font-size: 14px !important; }
+      
+      .feature { padding: 24px !important; }
+    }
+    
+    @media (max-width: 640px) {
+      .container { padding: 0 12px; }
+      
+      body { font-size: 14px; }
+      
+      h1 { font-size: 24px !important; }
+      h2 { font-size: 20px !important; }
+      h3 { font-size: 16px !important; }
+      h4 { font-size: 14px !important; }
+      
+      p { font-size: 14px !important; line-height: 1.5; }
+      
+      .menu { gap: 16px; font-size: 12px; }
+      
+      section { padding: 40px 0 !important; }
+      
+      .btn, button { 
+        padding: 10px 20px !important; 
+        font-size: 13px !important; 
+        width: 100% !important;
+      }
+      
+      .feature { padding: 16px !important; }
+      
+      ul { margin: 0; padding-left: 20px; }
+      
+      li { margin-bottom: 8px; }
+    }
   </style>
 <script type="importmap">
 {

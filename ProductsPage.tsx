@@ -700,16 +700,16 @@ const ProductsPage: React.FC<ProductsPageProps> = ({ navigateToPage }) => {
       {/* LabBench Task Studio Product */}
       <section style={{ padding: '120px 0', background: 'linear-gradient(135deg, #8B5CF6 0%, #3B82F6 100%)' }}>
         <div className="container">
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: '1fr 1fr',
-            gap: '64px',
-            alignItems: 'center',
-            '@media (max-width: 1024px)': {
-              gridTemplateColumns: '1fr',
-              gap: '48px'
-            }
-          }}>className="product-grid"    margin: '0 auto',
+          <div className="product-grid">
+            {/* Left - Carousel placeholder */}
+            <div>
+              <div style={{
+                borderRadius: '16px',
+                overflow: 'hidden',
+                background: 'white',
+                boxShadow: '0 20px 60px rgba(0,0,0,0.12)',
+                maxWidth: '280px',
+                margin: '0 auto',
                 aspectRatio: '4/3',
                 display: 'flex',
                 alignItems: 'center',

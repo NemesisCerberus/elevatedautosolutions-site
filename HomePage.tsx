@@ -65,7 +65,7 @@ const HomePage: React.FC<HomePageProps> = ({ navigateToPage }) => {
         <div className="container hero-inner">
           <div>
             <span className="badge">✨ Elevating Education • Service Excellence</span>
-            <h2>Developing Today's Workforce and Tomorrow's Technicians</h2>
+            <h2>Integrated Training Solutions for the Modern Shop</h2>
             <p>We deliver cutting-edge automotive training that empowers individuals, professionals, and organizations to thrive in a rapidly evolving industry.</p>
             <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
               <a href="#" onClick={(e) => { e.preventDefault(); navigateToPage('workforce'); }} className="btn primary">Book a Demo</a>

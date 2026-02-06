@@ -74,9 +74,9 @@ const App: React.FC = () => {
                 navigateToPage('domains');
                 setLogoClickCount(0);
               } else {
+                navigateToPage('home');
                 setTimeout(() => setLogoClickCount(0), 2000);
               }
-              navigateToPage('home');
             }} className="brand" style={{ cursor: 'pointer' }}>
               <img src={logoSrc} alt="ElevatED Automotive Solutions logo" className="brand-logo" />
               <h1 aria-label="ElevatED Automotive Solutions">ElevatED Automotive Solutions</h1>

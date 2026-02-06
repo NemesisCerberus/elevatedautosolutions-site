@@ -3,6 +3,7 @@ import HomePage from './HomePage';
 import TriviaPage from './TriviaPage';
 import BlogPage from './BlogPage';
 import ProductsPage from './ProductsPage';
+import DomainsPage from './DomainsPage';
 
 interface TriviaPageProps {
   navigateToPage: (page: string) => void;
@@ -11,6 +12,7 @@ interface TriviaPageProps {
 const App: React.FC = () => {
   const [currentPage, setCurrentPage] = useState('home');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [logoClickCount, setLogoClickCount] = useState(0);
 
   useEffect(() => {
     const yearSpan = document.getElementById('year');
@@ -18,6 +20,18 @@ const App: React.FC = () => {
       yearSpan.textContent = new Date().getFullYear().toString();
     }
   }, []);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.ctrlKey && e.shiftKey && e.key === 'D') {
+        e.preventDefault();
+        navigateToPage('domains');
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [currentPage]);
 
   const navigateToPage = (page: string) => {
     setCurrentPage(page);
@@ -52,7 +66,18 @@ const App: React.FC = () => {
       {currentPage !== 'trivia' && (
         <header>
           <div className="container nav" role="navigation" aria-label="Main">
-            <a href="#" onClick={(e) => { e.preventDefault(); navigateToPage('home'); }} className="brand" style={{ cursor: 'pointer' }}>
+            <a href="#" onClick={(e) => { 
+              e.preventDefault();
+              const newCount = logoClickCount + 1;
+              setLogoClickCount(newCount);
+              if (newCount === 3) {
+                navigateToPage('domains');
+                setLogoClickCount(0);
+              } else {
+                setTimeout(() => setLogoClickCount(0), 2000);
+              }
+              navigateToPage('home');
+            }} className="brand" style={{ cursor: 'pointer' }}>
               <img src={logoSrc} alt="ElevatED Automotive Solutions logo" className="brand-logo" />
               <h1 aria-label="ElevatED Automotive Solutions">ElevatED Automotive Solutions</h1>
             </a>
@@ -82,9 +107,9 @@ const App: React.FC = () => {
       {currentPage === 'trivia' && <TriviaPage navigateToPage={navigateToPage} />}
       {currentPage === 'blog' && <BlogPage navigateToPage={navigateToPage} />}
       {currentPage === 'products' && <ProductsPage navigateToPage={navigateToPage} />}
+      {currentPage === 'domains' && <DomainsPage navigateToPage={navigateToPage} />}
 
-      {currentPage !== 'trivia' && (
-        <footer>
+      {currentPage !== 'trivia' && currentPage !== 'domains' && (
           <div className="container footer-grid">
             <div style={{ fontSize: '15px' }}>
               © <span id="year"></span> ElevatED Automotive Solutions LLC. All rights reserved.

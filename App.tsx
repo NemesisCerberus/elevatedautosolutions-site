@@ -110,6 +110,7 @@ const App: React.FC = () => {
       {currentPage === 'domains' && <DomainsPage navigateToPage={navigateToPage} />}
 
       {currentPage !== 'trivia' && currentPage !== 'domains' && (
+        <footer>
           <div className="container footer-grid">
             <div style={{ fontSize: '15px' }}>
               © <span id="year"></span> ElevatED Automotive Solutions LLC. All rights reserved.

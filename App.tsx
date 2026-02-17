@@ -80,7 +80,7 @@ const App: React.FC = () => {
             }} className="brand" style={{ cursor: 'pointer' }}>
               <img src={logoSrc} alt="ElevatED Automotive Solutions logo" className="brand-logo" />
               <h1 aria-label="ElevatED Automotive Solutions">
-                <span style={{ color: '#ffffff' }}>Elevat</span><span style={{ color: '#0066ff' }}>Ed</span><span style={{ color: '#ffffff' }}> Automotive Solutions</span>
+                <span style={{ color: '#64748B' }}>Elevat</span><span style={{ color: '#0066ff' }}>Ed</span><span style={{ color: '#64748B' }}> Automotive Solutions</span>
               </h1>
             </a>
             <button 

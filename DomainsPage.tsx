@@ -43,6 +43,10 @@ const DomainsPage: React.FC<DomainsPageProps> = ({ navigateToPage }) => {
     {
       name: 'LabBench Custom Task Sheets',
       url: 'https://labbench.elevatedautosolutions.com'
+    },
+    {
+      name: 'GlassGarage Video Inspections',
+      url: 'https://glassgarage.elevatedautosolutions.com'
     }
   ];
 

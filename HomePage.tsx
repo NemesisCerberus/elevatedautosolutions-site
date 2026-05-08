@@ -409,7 +409,7 @@ const HomePage: React.FC<HomePageProps> = ({ navigateToPage }) => {
                     marginBottom: '20px'
                   }} />
                   <h4 style={{ fontSize: '22px', fontWeight: 900, color: 'var(--text-primary)', margin: '0 0 4px' }}>Matt Boudinot</h4>
-                  <p style={{ fontSize: '14px', color: 'var(--accent-cyan)', fontWeight: 700, margin: '0 0 16px', textTransform: 'uppercase', letterSpacing: '1px' }}>Co-Founder &amp; AI Integration Strategist</p>
+                  <p style={{ fontSize: '14px', color: 'var(--accent-cyan)', fontWeight: 700, margin: '0 0 16px', textTransform: 'uppercase', letterSpacing: '1px' }}>Co-Founder &amp; Chief Technical Architect</p>
                 </div>
                 <div style={{ padding: '0 32px 32px' }}>
                   <p style={{ fontSize: '15px', color: 'var(--text-secondary)', lineHeight: 1.8, margin: '0 0 16px' }}>
@@ -443,7 +443,7 @@ const HomePage: React.FC<HomePageProps> = ({ navigateToPage }) => {
                     marginBottom: '20px'
                   }} />
                   <h4 style={{ fontSize: '22px', fontWeight: 900, color: 'var(--text-primary)', margin: '0 0 4px' }}>Jeff Copeland</h4>
-                  <p style={{ fontSize: '14px', color: 'var(--accent-cyan)', fontWeight: 700, margin: '0 0 16px', textTransform: 'uppercase', letterSpacing: '1px' }}>Co-Founder &amp; Automotive Technology Instructor</p>
+                  <p style={{ fontSize: '14px', color: 'var(--accent-cyan)', fontWeight: 700, margin: '0 0 16px', textTransform: 'uppercase', letterSpacing: '1px' }}>Co-Founder &amp; Chief Strategy Officer</p>
                 </div>
                 <div style={{ padding: '0 32px 32px' }}>
                   <p style={{ fontSize: '15px', color: 'var(--text-secondary)', lineHeight: 1.8, margin: '0 0 16px' }}>

@@ -290,7 +290,7 @@ const HomePage: React.FC<HomePageProps> = ({ navigateToPage }) => {
                 name: 'NACAT',
                 role: 'Allied Member',
                 desc: 'ElevatEd is an Allied Member of the North American Council of Automotive Teachers. Matt and Jeff will be presenting "AI in the Garage" at the NACAT AEC 2026 conference in June.',
-                logo: '/NACAT Allied Member Logo.png'
+                logo: '/nacat-allied-member-logo.png'
               },
               {
                 name: 'AASP-MN',

@@ -1,10 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import HomePage from './HomePage';
 import TriviaPage from './TriviaPage';
-
-interface TriviaPageProps {
-  navigateToPage: (page: string) => void;
-}
+import BlogPage from './BlogPage';
 
 const App: React.FC = () => {
   const [currentPage, setCurrentPage] = useState('home');
@@ -16,6 +13,14 @@ const App: React.FC = () => {
     }
   }, []);
 
+  // Handle hash-based routing on load
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash.startsWith('#/blog')) {
+      setCurrentPage('blog');
+    }
+  }, []);
+
   const navigateToPage = (page: string) => {
     setCurrentPage(page);
     window.scrollTo(0, 0);
@@ -24,7 +29,6 @@ const App: React.FC = () => {
   const navigateToHomeAndScroll = (hash: string) => {
     if (currentPage !== 'home') {
       setCurrentPage('home');
-      // Wait for HomePage to render before scrolling
       setTimeout(() => {
         const element = document.querySelector(hash);
         if (element) {
@@ -32,7 +36,6 @@ const App: React.FC = () => {
         }
       }, 100);
     } else {
-      // Already on home page, just scroll
       const element = document.querySelector(hash);
       if (element) {
         element.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -48,12 +51,14 @@ const App: React.FC = () => {
         <header>
           <div className="container nav" role="navigation" aria-label="Main">
             <a href="#" onClick={(e) => { e.preventDefault(); navigateToPage('home'); }} className="brand" style={{ cursor: 'pointer' }}>
-              <img src={logoSrc} alt="ElevatED Automotive Solutions logo" className="brand-logo" />
-              <h1 aria-label="ElevatED Automotive Solutions">ElevatED Automotive Solutions</h1>
+              <img src={logoSrc} alt="ElevatED Automotive Solutions logo" className="brand-logo" style={{ borderRadius: '10px' }} />
+              <h1 aria-label="ElevatEd Automotive Solutions">Elevat<span>Ed</span> Automotive Solutions</h1>
             </a>
             <nav className="menu" aria-label="Primary">
-              <a href="#services" onClick={(e) => { e.preventDefault(); navigateToHomeAndScroll('#services'); }}>Services</a>
+              <a href="#products" onClick={(e) => { e.preventDefault(); navigateToHomeAndScroll('#products'); }}>Products</a>
+              <a href="#partners" onClick={(e) => { e.preventDefault(); navigateToHomeAndScroll('#partners'); }}>Partners</a>
               <a href="#about" onClick={(e) => { e.preventDefault(); navigateToHomeAndScroll('#about'); }}>About</a>
+              <a href="#" onClick={(e) => { e.preventDefault(); navigateToPage('blog'); }}>Blog</a>
               <a href="#" onClick={(e) => { e.preventDefault(); navigateToPage('trivia'); }}>AI Professor</a>
               <a href="mailto:info@elevatedautosolutions.com">Contact</a>
             </nav>
@@ -63,15 +68,26 @@ const App: React.FC = () => {
 
       {currentPage === 'home' && <HomePage navigateToPage={navigateToPage} />}
       {currentPage === 'trivia' && <TriviaPage navigateToPage={navigateToPage} />}
+      {currentPage === 'blog' && <BlogPage navigateToPage={navigateToPage} />}
 
       {currentPage !== 'trivia' && (
-        <footer>
-          <div className="container footer-grid">
-            <div style={{ fontSize: '15px' }}>
-              © <span id="year"></span> ElevatED Automotive Solutions LLC. All rights reserved.
+        <footer style={{
+          background: 'var(--navy-deepest)',
+          borderTop: '1px solid var(--border-subtle)',
+          padding: '32px 0'
+        }}>
+          <div className="container" style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            flexWrap: 'wrap',
+            gap: '16px'
+          }}>
+            <div style={{ fontSize: '14px', color: 'var(--text-muted)' }}>
+              &copy; <span id="year"></span> Elevat<span style={{ color: 'var(--primary-blue)' }}>Ed</span> Automotive Solutions LLC. All rights reserved.
             </div>
-            <div className="social" aria-label="Social links">
-              {/* Social icons would go here */}
+            <div style={{ fontSize: '13px', color: 'var(--text-muted)', letterSpacing: '2px', textTransform: 'uppercase', fontWeight: 600 }}>
+              Educate. Elevate. Excel.
             </div>
           </div>
         </footer>

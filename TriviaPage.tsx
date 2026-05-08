@@ -11,7 +11,7 @@ const TriviaPage: React.FC<TriviaPageProps> = ({ navigateToPage }) => {
     <main style={{
       height: '100vh',
       width: '100vw',
-      background: 'var(--charcoal)',
+      background: 'var(--navy-deepest)',
       display: 'flex',
       flexDirection: 'column',
       padding: '24px',
@@ -26,7 +26,7 @@ const TriviaPage: React.FC<TriviaPageProps> = ({ navigateToPage }) => {
           href="#" 
           onClick={(e) => { e.preventDefault(); navigateToPage('home'); }} 
           style={{
-            color: 'var(--light-gray)',
+            color: 'var(--text-primary)',
             textDecoration: 'none',
             fontWeight: 600,
             fontSize: '15px',
@@ -70,7 +70,7 @@ const TriviaPage: React.FC<TriviaPageProps> = ({ navigateToPage }) => {
         marginTop: '16px',
         flexShrink: 0,
         fontSize: '14px',
-        color: 'var(--steel-gray)'
+        color: 'var(--text-muted)'
       }}>
         Or, open the{' '}
         <a

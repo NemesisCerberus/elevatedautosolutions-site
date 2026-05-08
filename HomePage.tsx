@@ -289,7 +289,8 @@ const HomePage: React.FC<HomePageProps> = ({ navigateToPage }) => {
               {
                 name: 'NACAT',
                 role: 'Allied Member',
-                desc: 'ElevatEd is an Allied Member of the North American Council of Automotive Teachers. Matt and Jeff will be presenting "AI in the Garage" at the NACAT AEC 2026 conference in June.'
+                desc: 'ElevatEd is an Allied Member of the North American Council of Automotive Teachers. Matt and Jeff will be presenting "AI in the Garage" at the NACAT AEC 2026 conference in June.',
+                logo: '/NACAT Allied Member Logo.png'
               },
               {
                 name: 'AASP-MN',
@@ -312,9 +313,36 @@ const HomePage: React.FC<HomePageProps> = ({ navigateToPage }) => {
               }}>
                 <h4 style={{ fontSize: '24px', fontWeight: 800, color: 'var(--text-primary)', margin: '0 0 12px' }}>{partner.name}</h4>
                 <p style={{ fontSize: '14px', color: 'var(--accent-cyan)', fontWeight: 700, margin: '0 0 16px', textTransform: 'uppercase', letterSpacing: '1px' }}>{partner.role}</p>
-                <p style={{ fontSize: '16px', color: 'var(--text-secondary)', lineHeight: 1.8, margin: 0 }}>
+                <p style={{ fontSize: '16px', color: 'var(--text-secondary)', lineHeight: 1.8, margin: partner.logo ? '0 0 24px' : '0' }}>
                   {partner.desc}
                 </p>
+                {partner.logo && (
+                  <div style={{
+                    marginTop: '8px',
+                    display: 'flex',
+                    justifyContent: 'center'
+                  }}>
+                    <div style={{
+                      background: '#ffffff',
+                      borderRadius: '14px',
+                      padding: '20px 28px',
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      boxShadow: '0 2px 12px rgba(0,0,0,0.15)'
+                    }}>
+                      <img
+                        src={partner.logo}
+                        alt={`${partner.name} Allied Member Logo`}
+                        style={{
+                          maxWidth: '220px',
+                          height: 'auto',
+                          display: 'block'
+                        }}
+                      />
+                    </div>
+                  </div>
+                )}
               </div>
             ))}
           </div>

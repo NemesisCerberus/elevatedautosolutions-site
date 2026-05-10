@@ -137,7 +137,7 @@ const HomePage: React.FC<HomePageProps> = ({ navigateToPage }) => {
             </div>
 
             {/* Educator Feature Card Grid */}
-            <div className="feature-card-grid" style={{ gridTemplateColumns: 'repeat(4, 1fr)' }}>
+            <div className="feature-card-grid grid-4col">
               {[
                 { icon: '📋', title: 'Lesson Studio', desc: 'Turn any topic into a complete, print-ready lesson plan — Classroom Mode and Shop Mentorship formats.' },
                 { icon: '⚡', title: 'Lesson Prep', desc: 'Bell ringers, vocabulary builders, and R.O. templates to kick off every class with purpose.' },
@@ -192,7 +192,7 @@ const HomePage: React.FC<HomePageProps> = ({ navigateToPage }) => {
             </div>
 
             {/* Industry Feature Card Grid */}
-            <div className="feature-card-grid" style={{ gridTemplateColumns: 'repeat(3, 1fr)' }}>
+            <div className="feature-card-grid grid-3col">
               {[
                 { icon: '📈', title: 'Technician Onboarding', desc: 'Structured learning paths that take new hires from day one to productive — faster.' },
                 { icon: '🤖', title: 'TechAssist AI Mentor', desc: 'Three modes — Learning, Working, and Expert — adapting to each technician\'s skill level.' },
@@ -439,7 +439,7 @@ const HomePage: React.FC<HomePageProps> = ({ navigateToPage }) => {
             </div>
 
             {/* Trivia Feature Card Grid */}
-            <div className="feature-card-grid" style={{ gridTemplateColumns: 'repeat(4, 1fr)' }}>
+            <div className="feature-card-grid grid-4col">
               {[
                 { icon: '✨', title: 'AI-Generated Content', desc: 'Powered by Google Gemini — create custom trivia on any topic in seconds.' },
                 { icon: '📄', title: 'Document Upload', desc: 'Instantly create games from your own PDFs, study guides, or company docs.' },

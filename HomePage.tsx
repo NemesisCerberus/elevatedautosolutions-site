@@ -225,47 +225,103 @@ const HomePage: React.FC<HomePageProps> = ({ navigateToPage }) => {
                   Try It Free Now
                 </div>
               </div>
-              {/* Screenshot Gallery */}
+              {/* Screenshot Carousel */}
               <div style={{
                 background: 'var(--navy-card)',
                 border: '2px solid var(--border-subtle)',
                 borderRadius: '20px',
                 padding: '20px',
-                boxShadow: 'var(--shadow-soft)'
+                boxShadow: 'var(--shadow-soft)',
+                position: 'relative'
               }}>
-                <div style={{
-                  display: 'grid',
-                  gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
-                  gap: '12px'
-                }}>
-                  {triviaImages.map((img, i) => (
-                    <img
+                {/* Main image */}
+                <img
+                  src={triviaImages[lightboxIndex].src}
+                  alt={triviaImages[lightboxIndex].alt}
+                  onClick={() => openLightbox(lightboxIndex)}
+                  style={{
+                    width: '100%',
+                    borderRadius: '12px',
+                    cursor: 'pointer',
+                    display: 'block',
+                    boxShadow: '0 4px 16px rgba(0,0,0,0.25)'
+                  }}
+                />
+
+                {/* Prev arrow */}
+                <button
+                  onClick={(e) => { e.stopPropagation(); prevImage(); }}
+                  style={{
+                    position: 'absolute',
+                    left: '32px',
+                    top: '50%',
+                    transform: 'translateY(-50%)',
+                    background: 'rgba(0,0,0,0.5)',
+                    border: '2px solid rgba(255,255,255,0.15)',
+                    borderRadius: '50%',
+                    width: '44px',
+                    height: '44px',
+                    color: 'white',
+                    fontSize: '20px',
+                    cursor: 'pointer',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    transition: 'background 0.2s',
+                    backdropFilter: 'blur(4px)'
+                  }}
+                  onMouseOver={(e) => (e.currentTarget.style.background = 'rgba(59,130,246,0.6)')}
+                  onMouseOut={(e) => (e.currentTarget.style.background = 'rgba(0,0,0,0.5)')}
+                >&#8249;</button>
+
+                {/* Next arrow */}
+                <button
+                  onClick={(e) => { e.stopPropagation(); nextImage(); }}
+                  style={{
+                    position: 'absolute',
+                    right: '32px',
+                    top: '50%',
+                    transform: 'translateY(-50%)',
+                    background: 'rgba(0,0,0,0.5)',
+                    border: '2px solid rgba(255,255,255,0.15)',
+                    borderRadius: '50%',
+                    width: '44px',
+                    height: '44px',
+                    color: 'white',
+                    fontSize: '20px',
+                    cursor: 'pointer',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    transition: 'background 0.2s',
+                    backdropFilter: 'blur(4px)'
+                  }}
+                  onMouseOver={(e) => (e.currentTarget.style.background = 'rgba(59,130,246,0.6)')}
+                  onMouseOut={(e) => (e.currentTarget.style.background = 'rgba(0,0,0,0.5)')}
+                >&#8250;</button>
+
+                {/* Dot indicators + counter */}
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', marginTop: '14px' }}>
+                  {triviaImages.map((_, i) => (
+                    <button
                       key={i}
-                      src={img.src}
-                      alt={img.alt}
-                      onClick={() => openLightbox(i)}
+                      onClick={() => setLightboxIndex(i)}
                       style={{
-                        width: '100%',
-                        borderRadius: '10px',
+                        width: lightboxIndex === i ? '24px' : '8px',
+                        height: '8px',
+                        borderRadius: '4px',
+                        border: 'none',
+                        background: lightboxIndex === i ? 'var(--primary-blue)' : 'var(--border-subtle)',
                         cursor: 'pointer',
                         transition: 'all 0.3s ease',
-                        boxShadow: '0 4px 12px rgba(0,0,0,0.2)',
-                        border: '2px solid transparent'
-                      }}
-                      onMouseOver={(e) => {
-                        (e.target as HTMLImageElement).style.transform = 'scale(1.03)';
-                        (e.target as HTMLImageElement).style.borderColor = 'var(--primary-blue)';
-                      }}
-                      onMouseOut={(e) => {
-                        (e.target as HTMLImageElement).style.transform = 'scale(1)';
-                        (e.target as HTMLImageElement).style.borderColor = 'transparent';
+                        padding: 0
                       }}
                     />
                   ))}
+                  <span style={{ fontSize: '12px', color: 'var(--text-muted)', marginLeft: '8px' }}>
+                    {lightboxIndex + 1} / {triviaImages.length}
+                  </span>
                 </div>
-                <p style={{ textAlign: 'center', fontSize: '13px', color: 'var(--text-muted)', margin: '14px 0 0', fontStyle: 'italic' }}>
-                  Click any screenshot to expand
-                </p>
               </div>
 
               {/* Lightbox Overlay */}

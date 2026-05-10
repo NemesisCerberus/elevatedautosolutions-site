@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 interface HomePageProps {
   navigateToPage: (page: string) => void;
@@ -9,7 +9,40 @@ const ShopCommand = () => (
   <><span style={{ color: 'var(--text-primary)' }}>Shop</span><span style={{ color: 'var(--primary-blue)' }}>Command</span><sup style={{ fontSize: '0.4em', color: 'var(--text-muted)', verticalAlign: 'super' }}>&trade;</sup></>
 );
 
+const triviaImages = [
+  { src: '/Trivia Gameplay 1.png', alt: 'AI Trivia Professor - Topic Selection' },
+  { src: '/Trivia Gameplay 2.png', alt: 'AI Trivia Professor - Question Screen' },
+  { src: '/Trivia Gameplay 3.png', alt: 'AI Trivia Professor - AI Evaluation' },
+  { src: '/Trivia Gameplay 4.png', alt: 'AI Trivia Professor - Multiplayer Mode' },
+  { src: '/Trivia Gameplay 5.png', alt: 'AI Trivia Professor - Game Modes' },
+  { src: '/Trivia Gameplay 6.png', alt: 'AI Trivia Professor - Results Screen' },
+  { src: '/Trivia Gameplay 7.png', alt: 'AI Trivia Professor - Leaderboard' }
+];
+
 const HomePage: React.FC<HomePageProps> = ({ navigateToPage }) => {
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
+
+  const openLightbox = (index: number) => {
+    setLightboxIndex(index);
+    setLightboxOpen(true);
+  };
+
+  const closeLightbox = () => setLightboxOpen(false);
+
+  const prevImage = () => setLightboxIndex((prev) => (prev === 0 ? triviaImages.length - 1 : prev - 1));
+  const nextImage = () => setLightboxIndex((prev) => (prev === triviaImages.length - 1 ? 0 : prev + 1));
+
+  useEffect(() => {
+    if (!lightboxOpen) return;
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') prevImage();
+      if (e.key === 'ArrowRight') nextImage();
+    };
+    window.addEventListener('keydown', handleKey);
+    return () => window.removeEventListener('keydown', handleKey);
+  }, [lightboxOpen]);
   useEffect(() => {
     const observerOptions = {
       threshold: 0.1,
@@ -192,16 +225,161 @@ const HomePage: React.FC<HomePageProps> = ({ navigateToPage }) => {
                   Try It Free Now
                 </div>
               </div>
+              {/* Screenshot Gallery */}
               <div style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-                gap: '20px',
-                alignItems: 'start'
+                background: 'var(--navy-card)',
+                border: '2px solid var(--border-subtle)',
+                borderRadius: '20px',
+                padding: '20px',
+                boxShadow: 'var(--shadow-soft)'
               }}>
-                <img src="/Trivia Gameplay 5.png" alt="ElevatED AI Trivia Professor - Game modes" style={{ width: '100%', borderRadius: '12px', boxShadow: '0 8px 24px rgba(0,0,0,0.3)' }} />
-                <img src="/Trivia Gameplay 6.png" alt="ElevatED AI Trivia Professor - AI evaluation" style={{ width: '100%', borderRadius: '12px', boxShadow: '0 8px 24px rgba(0,0,0,0.3)' }} />
-                <img src="/Trivia Gameplay 7.png" alt="ElevatED AI Trivia Professor - Multiplayer mode" style={{ width: '100%', borderRadius: '12px', boxShadow: '0 8px 24px rgba(0,0,0,0.3)' }} />
+                <div style={{
+                  display: 'grid',
+                  gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
+                  gap: '12px'
+                }}>
+                  {triviaImages.map((img, i) => (
+                    <img
+                      key={i}
+                      src={img.src}
+                      alt={img.alt}
+                      onClick={() => openLightbox(i)}
+                      style={{
+                        width: '100%',
+                        borderRadius: '10px',
+                        cursor: 'pointer',
+                        transition: 'all 0.3s ease',
+                        boxShadow: '0 4px 12px rgba(0,0,0,0.2)',
+                        border: '2px solid transparent'
+                      }}
+                      onMouseOver={(e) => {
+                        (e.target as HTMLImageElement).style.transform = 'scale(1.03)';
+                        (e.target as HTMLImageElement).style.borderColor = 'var(--primary-blue)';
+                      }}
+                      onMouseOut={(e) => {
+                        (e.target as HTMLImageElement).style.transform = 'scale(1)';
+                        (e.target as HTMLImageElement).style.borderColor = 'transparent';
+                      }}
+                    />
+                  ))}
+                </div>
+                <p style={{ textAlign: 'center', fontSize: '13px', color: 'var(--text-muted)', margin: '14px 0 0', fontStyle: 'italic' }}>
+                  Click any screenshot to expand
+                </p>
               </div>
+
+              {/* Lightbox Overlay */}
+              {lightboxOpen && (
+                <div
+                  onClick={closeLightbox}
+                  style={{
+                    position: 'fixed',
+                    top: 0,
+                    left: 0,
+                    width: '100vw',
+                    height: '100vh',
+                    background: 'rgba(6, 13, 26, 0.95)',
+                    zIndex: 9999,
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    cursor: 'pointer'
+                  }}
+                >
+                  {/* Close button */}
+                  <button
+                    onClick={closeLightbox}
+                    style={{
+                      position: 'absolute',
+                      top: '24px',
+                      right: '32px',
+                      background: 'none',
+                      border: 'none',
+                      color: 'var(--text-primary)',
+                      fontSize: '36px',
+                      cursor: 'pointer',
+                      zIndex: 10001,
+                      lineHeight: 1
+                    }}
+                  >&times;</button>
+
+                  {/* Prev arrow */}
+                  <button
+                    onClick={(e) => { e.stopPropagation(); prevImage(); }}
+                    style={{
+                      position: 'absolute',
+                      left: '24px',
+                      top: '50%',
+                      transform: 'translateY(-50%)',
+                      background: 'rgba(255,255,255,0.1)',
+                      border: '2px solid rgba(255,255,255,0.2)',
+                      borderRadius: '50%',
+                      width: '52px',
+                      height: '52px',
+                      color: 'white',
+                      fontSize: '24px',
+                      cursor: 'pointer',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      zIndex: 10001,
+                      transition: 'background 0.2s'
+                    }}
+                  >&#8249;</button>
+
+                  {/* Image */}
+                  <img
+                    src={triviaImages[lightboxIndex].src}
+                    alt={triviaImages[lightboxIndex].alt}
+                    onClick={(e) => e.stopPropagation()}
+                    style={{
+                      maxWidth: '85vw',
+                      maxHeight: '85vh',
+                      borderRadius: '16px',
+                      boxShadow: '0 16px 64px rgba(0,0,0,0.6)',
+                      cursor: 'default'
+                    }}
+                  />
+
+                  {/* Next arrow */}
+                  <button
+                    onClick={(e) => { e.stopPropagation(); nextImage(); }}
+                    style={{
+                      position: 'absolute',
+                      right: '24px',
+                      top: '50%',
+                      transform: 'translateY(-50%)',
+                      background: 'rgba(255,255,255,0.1)',
+                      border: '2px solid rgba(255,255,255,0.2)',
+                      borderRadius: '50%',
+                      width: '52px',
+                      height: '52px',
+                      color: 'white',
+                      fontSize: '24px',
+                      cursor: 'pointer',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      zIndex: 10001,
+                      transition: 'background 0.2s'
+                    }}
+                  >&#8250;</button>
+
+                  {/* Counter */}
+                  <div style={{
+                    position: 'absolute',
+                    bottom: '32px',
+                    left: '50%',
+                    transform: 'translateX(-50%)',
+                    color: 'var(--text-muted)',
+                    fontSize: '14px',
+                    fontWeight: 600,
+                    letterSpacing: '2px'
+                  }}>
+                    {lightboxIndex + 1} / {triviaImages.length}
+                  </div>
+                </div>
+              )}
             </div>
 
             {/* Trivia Feature Card Grid */}
@@ -295,12 +473,16 @@ const HomePage: React.FC<HomePageProps> = ({ navigateToPage }) => {
               {
                 name: 'AASP-MN',
                 role: 'Industry Partner',
-                desc: 'Partnering with the Alliance of Automotive Service Providers of Minnesota to bring AI-powered training tools to member shops and support the next generation of technicians through MNCARS.'
+                desc: 'Partnering with the Alliance of Automotive Service Providers of Minnesota to bring AI-powered training tools to member shops and support the next generation of technicians through MNCARS.',
+                logo: '/aaspmn-logo.png',
+                logoBg: '#ffffff'
               },
               {
                 name: 'MTTIA',
                 role: 'Conference Presenters & Sponsors',
-                desc: 'Presenting hands-on AI workshops at the 2026 MTTIA Annual Conference in Brainerd, MN — reaching 100+ transportation instructors across a five-state region.'
+                desc: 'Presenting hands-on AI workshops at the 2026 MTTIA Annual Conference in Brainerd, MN — reaching 100+ transportation instructors across a five-state region.',
+                logo: '/mttia-logo.webp',
+                logoBg: '#ffffff'
               }
             ].map((partner, i) => (
               <div key={i} className="partner-card" style={{
@@ -478,7 +660,7 @@ const HomePage: React.FC<HomePageProps> = ({ navigateToPage }) => {
                     23+ years in the automotive education field with expertise in instructional design, AI integration, and interactive simulations for real-world technical training. Jeff brings deep classroom knowledge and a passion for building tools that actually work for instructors.
                   </p>
                   <p style={{ fontSize: '13px', color: 'var(--primary-blue)', fontWeight: 600, margin: '0 0 12px' }}>
-                    23 years continuous service in higher education
+                    MTTIA 2026 Hall of Fame Award
                   </p>
                   <a href="https://www.linkedin.com/in/jeff-copeland-b340391a/" target="_blank" rel="noopener noreferrer" style={{ fontSize: '14px', color: 'var(--blue-light)', fontWeight: 600, textDecoration: 'underline' }}>
                     LinkedIn

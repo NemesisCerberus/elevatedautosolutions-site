@@ -457,6 +457,25 @@ const HomePage: React.FC<HomePageProps> = ({ navigateToPage }) => {
         </div>
       </section>
 
+      {/* ===== SERVICES TEASER ===== */}
+      <section style={{ padding: '100px 0', background: 'var(--navy-dark)' }}>
+        <div className="container" style={{ maxWidth: '760px', textAlign: 'center' }}>
+          <div className="section-title" style={{ marginBottom: '16px' }}>BEYOND THE PRODUCTS</div>
+          <h3 style={{ fontSize: '36px', fontWeight: 900, color: 'var(--text-primary)', margin: '0 0 20px', letterSpacing: '-0.5px' }}>
+            We also work with organizations directly.
+          </h3>
+          <p style={{ fontSize: '18px', color: 'var(--text-secondary)', lineHeight: 1.85, margin: '0 0 36px' }}>
+            Whether you lead an education program looking to integrate AI across your faculty, or you run an automotive business that wants to develop your technicians — we offer consulting and hands-on training to help you move forward.
+          </p>
+          <button
+            className="btn primary"
+            onClick={() => navigateToPage('services')}
+          >
+            Explore Our Services &rarr;
+          </button>
+        </div>
+      </section>
+
       {/* ===== FOUNDING PARTNERS ===== */}
       <section id="founders" style={{ padding: '100px 0', background: 'linear-gradient(180deg, var(--navy-base), var(--navy-dark))' }}>
         <div className="container">

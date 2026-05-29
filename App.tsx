@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import HomePage from './HomePage';
 import TriviaPage from './TriviaPage';
 import BlogPage from './BlogPage';
+import ServicesPage from './ServicesPage';
 
 const App: React.FC = () => {
   const [currentPage, setCurrentPage] = useState('home');
@@ -56,6 +57,7 @@ const App: React.FC = () => {
             </a>
             <nav className="menu" aria-label="Primary">
               <a href="#products" onClick={(e) => { e.preventDefault(); navigateToHomeAndScroll('#products'); }}>Products</a>
+              <a href="#" onClick={(e) => { e.preventDefault(); navigateToPage('services'); }}>Services</a>
               <a href="#partners" onClick={(e) => { e.preventDefault(); navigateToHomeAndScroll('#partners'); }}>Partners</a>
               <a href="#about" onClick={(e) => { e.preventDefault(); navigateToHomeAndScroll('#about'); }}>About</a>
               <a href="#" onClick={(e) => { e.preventDefault(); navigateToPage('blog'); }}>Blog</a>
@@ -67,6 +69,7 @@ const App: React.FC = () => {
       )}
 
       {currentPage === 'home' && <HomePage navigateToPage={navigateToPage} />}
+      {currentPage === 'services' && <ServicesPage navigateToPage={navigateToPage} />}
       {currentPage === 'trivia' && <TriviaPage navigateToPage={navigateToPage} />}
       {currentPage === 'blog' && <BlogPage navigateToPage={navigateToPage} />}
 

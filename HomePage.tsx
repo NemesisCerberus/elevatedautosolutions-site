@@ -548,13 +548,11 @@ const HomePage: React.FC<HomePageProps> = ({ navigateToPage }) => {
               boxShadow: 'var(--shadow-soft)',
               display: 'flex',
               flexDirection: 'column',
-              gap: '24px'
+              gap: '20px'
             }}>
-              {/* Quote mark */}
-              <div style={{ fontSize: '56px', lineHeight: 1, color: 'var(--primary-blue)', fontFamily: 'Georgia, serif', marginBottom: '-12px' }}>&ldquo;</div>
               {/* Quote body */}
               <p style={{ fontSize: '16px', color: 'var(--text-secondary)', lineHeight: 1.85, margin: 0, fontStyle: 'italic' }}>
-                I'm happy to provide a testimonial for Matthew Boudinot, particularly when it comes to the practice and presentation on Artificial Intelligence and technology in general. It's been my pleasure to present with Matthew on numerous occasions and he always provides clear, practical insights into advanced technologies. His audiences come away with practical, actionable information they can use immediately. I think it's safe to say he's an AI power user. His audiences get the benefit of his walking the walk as well as talking the talk. And just so you know this wasn't written by an AI — he has an epic beard.
+                <span style={{ color: 'var(--primary-blue)', fontFamily: 'Georgia, serif', fontSize: '1.4em', lineHeight: 0, verticalAlign: '-0.3em', marginRight: '2px' }}>&ldquo;</span>I'm happy to provide a testimonial for Matthew Boudinot, particularly when it comes to the practice and presentation on Artificial Intelligence and technology in general. It's been my pleasure to present with Matthew on numerous occasions and he always provides clear, practical insights into advanced technologies. His audiences come away with practical, actionable information they can use immediately. I think it's safe to say he's an AI power user. His audiences get the benefit of his walking the walk as well as talking the talk. And just so you know this wasn't written by an AI — he has an epic beard.<span style={{ color: 'var(--primary-blue)', fontFamily: 'Georgia, serif', fontSize: '1.4em', lineHeight: 0, verticalAlign: '-0.3em', marginLeft: '2px' }}>&rdquo;</span>
               </p>
               {/* Attribution */}
               <div style={{ borderTop: '1px solid var(--border-subtle)', paddingTop: '20px', marginTop: 'auto' }}>

@@ -537,7 +537,10 @@ const HomePage: React.FC<HomePageProps> = ({ navigateToPage }) => {
               <h3>What People Are Saying</h3>
             </div>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: '32px' }}>
+
+          {/* ── Personal Testimonials ── */}
+          <p style={{ fontSize: '12px', fontWeight: 700, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '2px', margin: '0 0 20px' }}>About Our Team</p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: '32px', marginBottom: '56px' }}>
 
             {/* — Mark Gill — */}
             <div style={{
@@ -550,19 +553,69 @@ const HomePage: React.FC<HomePageProps> = ({ navigateToPage }) => {
               flexDirection: 'column',
               gap: '20px'
             }}>
-              {/* Quote body */}
               <p style={{ fontSize: '16px', color: 'var(--text-secondary)', lineHeight: 1.85, margin: 0, fontStyle: 'italic' }}>
                 <span style={{ color: 'var(--primary-blue)', fontFamily: 'Georgia, serif', fontSize: '1.4em', lineHeight: 0, verticalAlign: '-0.3em', marginRight: '2px' }}>&ldquo;</span>I'm happy to provide a testimonial for Matthew Boudinot, particularly when it comes to the practice and presentation on Artificial Intelligence and technology in general. It's been my pleasure to present with Matthew on numerous occasions and he always provides clear, practical insights into advanced technologies. His audiences come away with practical, actionable information they can use immediately. I think it's safe to say he's an AI power user. His audiences get the benefit of his walking the walk as well as talking the talk. And just so you know this wasn't written by an AI — he has an epic beard.<span style={{ color: 'var(--primary-blue)', fontFamily: 'Georgia, serif', fontSize: '1.4em', lineHeight: 0, verticalAlign: '-0.3em', marginLeft: '2px' }}>&rdquo;</span>
               </p>
-              {/* Attribution */}
               <div style={{ borderTop: '1px solid var(--border-subtle)', paddingTop: '20px', marginTop: 'auto' }}>
                 <p style={{ fontSize: '16px', fontWeight: 800, color: 'var(--text-primary)', margin: '0 0 4px' }}>Mark Gill</p>
                 <p style={{ fontSize: '14px', color: 'var(--accent-cyan)', fontWeight: 600, margin: 0 }}>VizLab Engineer &mdash; St. Cloud State University</p>
               </div>
             </div>
 
-            {/* — Placeholder for future testimonials — */}
-            {/* Add additional testimonial cards here following the same pattern */}
+            {/* Add additional personal testimonial cards here */}
+
+          </div>
+
+          {/* ── Product Testimonials ── */}
+          <p style={{ fontSize: '12px', fontWeight: 700, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '2px', margin: '0 0 20px' }}>About Our Products</p>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
+
+            {/* — Nicole Reynolds — */}
+            <div style={{
+              background: 'var(--navy-card)',
+              border: '2px solid var(--border-subtle)',
+              borderRadius: '20px',
+              padding: '40px',
+              boxShadow: 'var(--shadow-soft)',
+            }}>
+              {/* Product badge */}
+              <div style={{ marginBottom: '24px' }}>
+                <span style={{
+                  display: 'inline-block',
+                  fontSize: '12px',
+                  fontWeight: 700,
+                  color: 'var(--primary-blue)',
+                  background: 'rgba(59,130,246,0.1)',
+                  border: '1px solid rgba(59,130,246,0.3)',
+                  borderRadius: '20px',
+                  padding: '4px 14px',
+                  letterSpacing: '1px',
+                  textTransform: 'uppercase'
+                }}>ShopCommand&trade; Industry</span>
+              </div>
+              {/* Quote body — 4 paragraphs */}
+              <div style={{ fontSize: '15px', color: 'var(--text-secondary)', lineHeight: 1.9, fontStyle: 'italic', display: 'flex', flexDirection: 'column', gap: '16px', marginBottom: '28px' }}>
+                <p style={{ margin: 0 }}>
+                  <span style={{ color: 'var(--primary-blue)', fontFamily: 'Georgia, serif', fontSize: '1.4em', lineHeight: 0, verticalAlign: '-0.3em', marginRight: '2px' }}>&ldquo;</span>ShopCommand exceeded my expectations and showed me that AI can be used as a tool rather than a crutch.
+                </p>
+                <p style={{ margin: 0 }}>
+                  The learning platform is highly adaptive and gave me a tailored experience based off of my current knowledge in each topic. It is refreshing to go through training without feeling like it is too advanced or not advanced enough. On this platform, it can tell when you need more help or when you already understand a concept so you don't end up wasting your own valuable time. It is also programmed to be very supportive and encouraging which, especially on hard days, is very nice to get that praise that advisors very rarely get.
+                </p>
+                <p style={{ margin: 0 }}>
+                  The coach, their AI assistant, has been crucial in my day-to-day operations. Whether you need it to roleplay a customer interaction you are worried about, need labor time advice on something your shop software doesn't have data on, or even help writing policies and procedures for your shop, it is a wonderful tool! This tool has not only given me peace of mind and confidence in some of my customer and co-worker interactions, but it also takes the stress away of scrolling through Google and Reddit for obscure information on repairs or spending hours on menial tasks.
+                </p>
+                <p style={{ margin: 0 }}>
+                  Finally, I'd like to mention their technician note platform. It has changed the way I present repairs to my customers. By inputting their "tech speak" it is able to make clear, concise notes in a simple to follow "cause, concern, correction" format. As a shop that does DVIs, this has cut down on my time of both note editing and answering customer questions. In turn, by making clear notes to the customer, we have seen a rise in repair approvals and approval turnaround time.<span style={{ color: 'var(--primary-blue)', fontFamily: 'Georgia, serif', fontSize: '1.4em', lineHeight: 0, verticalAlign: '-0.3em', marginLeft: '2px' }}>&rdquo;</span>
+                </p>
+              </div>
+              {/* Attribution */}
+              <div style={{ borderTop: '1px solid var(--border-subtle)', paddingTop: '20px' }}>
+                <p style={{ fontSize: '16px', fontWeight: 800, color: 'var(--text-primary)', margin: '0 0 4px' }}>Nicole Reynolds</p>
+                <p style={{ fontSize: '14px', color: 'var(--accent-cyan)', fontWeight: 600, margin: 0 }}>Service Writer &mdash; Lenfer Auto Care</p>
+              </div>
+            </div>
+
+            {/* Add additional product testimonial cards here */}
 
           </div>
         </div>

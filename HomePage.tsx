@@ -528,6 +528,48 @@ const HomePage: React.FC<HomePageProps> = ({ navigateToPage }) => {
         </div>
       </section>
 
+      {/* ===== TESTIMONIALS ===== */}
+      <section id="testimonials" style={{ padding: '100px 0', background: 'var(--navy-dark)' }}>
+        <div className="container">
+          <div className="section-head">
+            <div>
+              <div className="section-title">Testimonials</div>
+              <h3>What People Are Saying</h3>
+            </div>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: '32px' }}>
+
+            {/* — Mark Gill — */}
+            <div style={{
+              background: 'var(--navy-card)',
+              border: '2px solid var(--border-subtle)',
+              borderRadius: '20px',
+              padding: '40px',
+              boxShadow: 'var(--shadow-soft)',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '24px'
+            }}>
+              {/* Quote mark */}
+              <div style={{ fontSize: '56px', lineHeight: 1, color: 'var(--primary-blue)', fontFamily: 'Georgia, serif', marginBottom: '-12px' }}>&ldquo;</div>
+              {/* Quote body */}
+              <p style={{ fontSize: '16px', color: 'var(--text-secondary)', lineHeight: 1.85, margin: 0, fontStyle: 'italic' }}>
+                I'm happy to provide a testimonial for Matthew Boudinot, particularly when it comes to the practice and presentation on Artificial Intelligence and technology in general. It's been my pleasure to present with Matthew on numerous occasions and he always provides clear, practical insights into advanced technologies. His audiences come away with practical, actionable information they can use immediately. I think it's safe to say he's an AI power user. His audiences get the benefit of his walking the walk as well as talking the talk. And just so you know this wasn't written by an AI — he has an epic beard.
+              </p>
+              {/* Attribution */}
+              <div style={{ borderTop: '1px solid var(--border-subtle)', paddingTop: '20px', marginTop: 'auto' }}>
+                <p style={{ fontSize: '16px', fontWeight: 800, color: 'var(--text-primary)', margin: '0 0 4px' }}>Mark Gill</p>
+                <p style={{ fontSize: '14px', color: 'var(--accent-cyan)', fontWeight: 600, margin: 0 }}>VizLab Engineer &mdash; St. Cloud State University</p>
+              </div>
+            </div>
+
+            {/* — Placeholder for future testimonials — */}
+            {/* Add additional testimonial cards here following the same pattern */}
+
+          </div>
+        </div>
+      </section>
+
       {/* ===== PARTNERS & AFFILIATIONS ===== */}
       <section id="partners" style={{ padding: '80px 0', background: 'var(--navy-deepest)' }}>
         <div className="container">

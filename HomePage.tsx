@@ -856,7 +856,7 @@ const HomePage: React.FC<HomePageProps> = ({ navigateToPage }) => {
                     23+ years in the automotive education field with expertise in instructional design, AI integration, and interactive simulations for real-world technical training. Jeff brings deep classroom knowledge and a passion for building tools that actually work for instructors.
                   </p>
                   <p style={{ fontSize: '13px', color: 'var(--primary-blue)', fontWeight: 600, margin: '0 0 12px' }}>
-                    MTTIA 2026 Hall of Fame Award
+                    Minnesota Transportation Center of Excellence 2026 Hall of Fame Award
                   </p>
                   <a href="https://www.linkedin.com/in/jeff-copeland-b340391a/" target="_blank" rel="noopener noreferrer" style={{ fontSize: '14px', color: 'var(--blue-light)', fontWeight: 600, textDecoration: 'underline' }}>
                     LinkedIn

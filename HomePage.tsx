@@ -562,6 +562,34 @@ const HomePage: React.FC<HomePageProps> = ({ navigateToPage }) => {
               </div>
             </div>
 
+            {/* — David Anderson — */}
+            <div style={{
+              background: 'var(--navy-card)',
+              border: '2px solid var(--border-subtle)',
+              borderRadius: '20px',
+              padding: '40px',
+              boxShadow: 'var(--shadow-soft)',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '20px'
+            }}>
+              <div style={{ fontSize: '15px', color: 'var(--text-secondary)', lineHeight: 1.9, fontStyle: 'italic', display: 'flex', flexDirection: 'column', gap: '14px' }}>
+                <p style={{ margin: 0 }}>
+                  <span style={{ color: 'var(--primary-blue)', fontFamily: 'Georgia, serif', fontSize: '1.4em', lineHeight: 0, verticalAlign: '-0.3em', marginRight: '2px' }}>&ldquo;</span>Working with Matt Boudinot has been one of the most practical, forward-looking experiences I've had around AI in technical education. Matt doesn't treat AI as a buzzword; he understands the realities of the classroom and the shop, and then designs tools that actually solve problems faculty and students feel every day.
+                </p>
+                <p style={{ margin: 0 }}>
+                  In our AI sessions, I've seen him consistently move from abstract "AI possibilities" to concrete workflows for diagnostics, practice, and just-in-time support that make sense for automotive technicians and other hands-on fields. He has a rare combination of deep disciplinary expertise and a clear grasp of how people really learn in high-stakes, skills-based environments.
+                </p>
+                <p style={{ margin: 0 }}>
+                  The AI-powered tutoring tool he has developed for automotive technicians is a perfect example of this mindset. It reflects his commitment to student success and his ability to translate emerging technology into something reliable, safe, and genuinely useful at the point of need. I'm thrilled to collaborate with him and would readily recommend him to anyone looking for a partner who can bridge the gap between advanced AI tools and real-world teaching and training.<span style={{ color: 'var(--primary-blue)', fontFamily: 'Georgia, serif', fontSize: '1.4em', lineHeight: 0, verticalAlign: '-0.3em', marginLeft: '2px' }}>&rdquo;</span>
+                </p>
+              </div>
+              <div style={{ borderTop: '1px solid var(--border-subtle)', paddingTop: '20px', marginTop: 'auto' }}>
+                <p style={{ fontSize: '16px', fontWeight: 800, color: 'var(--text-primary)', margin: '0 0 4px' }}>David Anderson</p>
+                <p style={{ fontSize: '14px', color: 'var(--accent-cyan)', fontWeight: 600, margin: 0 }}>Educational Entrepreneur &amp; Biology Faculty &mdash; St. Cloud Technical and Community College</p>
+              </div>
+            </div>
+
             {/* Add additional personal testimonial cards here */}
 
           </div>

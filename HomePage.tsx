@@ -872,4 +872,3 @@ const HomePage: React.FC<HomePageProps> = ({ navigateToPage }) => {
 };
 
 export default HomePage;
-  

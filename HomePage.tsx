@@ -144,7 +144,7 @@ const HomePage: React.FC<HomePageProps> = ({ navigateToPage }) => {
                 { icon: '🔧', title: 'Lab Bench', desc: 'Step-by-step lab procedures aligned to MLR, AST, and MAST program standards.' },
                 { icon: '📊', title: 'Assessment Suite', desc: 'Rubrics, skills checklists, quick quizzes, and practical exams with customizable scoring.' },
                 { icon: '🎯', title: 'Instructor Tools', desc: 'Learning objectives, student feedback, and scenario coaching — built for new instructors.' },
-                { icon: '🤖', title: 'TechAssist AI', desc: 'AI diagnostic assistant with calculators, analyzers, and 100+ shop tools by ASE category.' },
+                { icon: '🤖', title: 'BayAssist AI', desc: 'AI diagnostic assistant with calculators, analyzers, and 100+ shop tools by ASE category.' },
                 { icon: '📚', title: 'Curriculum Tools', desc: 'Course maps, analogies, and differentiation strategies to structure your entire program.' },
                 { icon: '🎓', title: 'Learning Academy', desc: '66+ self-paced coaching lessons on classroom management, delivery, and assessment.' },
                 { icon: '🗣️', title: 'Huddle Builder', desc: 'Create shop huddle briefs and floor tools to keep your team aligned daily.' },
@@ -195,7 +195,7 @@ const HomePage: React.FC<HomePageProps> = ({ navigateToPage }) => {
             <div className="feature-card-grid grid-3col">
               {[
                 { icon: '📈', title: 'Technician Onboarding', desc: 'Structured learning paths that take new hires from day one to productive — faster.' },
-                { icon: '🤖', title: 'TechAssist AI Mentor', desc: 'Three modes — Learning, Working, and Expert — adapting to each technician\'s skill level.' },
+                { icon: '🤖', title: 'BayAssist AI Mentor', desc: 'Three modes — Learning, Working, and Expert — adapting to each technician\'s skill level.' },
                 { icon: '🧰', title: 'Digital Toolbox', desc: 'Compression calculators, fuel trim analyzers, brake diagnostics, and 100+ more tools.' },
                 { icon: '📊', title: 'Team Progress', desc: 'Track certifications, training completion, and skill development across your team.' },
                 { icon: '📖', title: 'ASE-Aligned Content', desc: '1,000+ lessons covering technical and soft skills, aligned with industry standards.' },
@@ -872,3 +872,4 @@ const HomePage: React.FC<HomePageProps> = ({ navigateToPage }) => {
 };
 
 export default HomePage;
+  
